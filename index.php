@@ -66,12 +66,15 @@
 
     
     <div class="container">
-        <h1 class="page-header text-center">Barrios</h1>
+        <h1 class="page-header text-center">Buscador</h1>
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 
                 <div class="row col-sm-12">
-                    <a href="#addnew" data-toggle="modal" class="btn btn-primary"><span class="fa fa-plus"></span> Nuevo Barrio</a>
+                    <a href="#addnew" data-toggle="modal" type="botton" class="btn btn-primary"><span class="fa fa-plus"></span> Nueva Marca</a>
+                    <a href="#addnew" data-toggle="modal" class="btn btn-secondary"><span class="fa fa-plus"></span>Nuevo Negocio</a>
+                    <a href="#addnew" data-toggle="modal" class="btn btn-success"><span class="fa fa-plus"></span> Nuevo Producto</a>
+                    <a href="#addnew" data-toggle="modal" class="btn btn-info"><span class="fa fa-plus"></span> Actualizar Stock</a>
                 </div>
                 <br>
 
@@ -80,38 +83,35 @@
                         <table id="myTable" class="table table-bordered table-striped display wrap"  width="100%">
 
                             <thead>
-                                <td>ID Barrio</td>
-                                <td>Descripcion Barrio</td>
-                                <th>Detalle</th>
-                                <th>Modificar</th>
-                                <th>Eliminar</th>
+                                <th>Imagen</th>
+                                <td>Nombre</td>
+                                <td>Descripcion del Producto</td>
+                                <th>Marca</th>
+                                <th>Negocio</th>
+                                <th>Precio</th>
+                                <th>Fecha de Modificacion</th>
                             </thead>
                             <tbody>
 
 
                                 <?php
                                 include_once('conexion/conexion.php');
-                                $sql = "SELECT * FROM barrios";
+                                $sql = "SELECT * FROM productos p1, negocio n1, marca m1 WHERE p1.id_negocio = n1.id_negocio AND p1.id_marca = m1.id_marca";
 
                                 $query = $conexion->query($sql);
                                 while($row = $query->fetch_assoc()){
                                     echo 
                                     "<tr>
-                                    <td>".$row['id_barrio']."</td>
-                                    <td>".$row['desc_barrios']."</td>
-                                    <td>
-                                    <a href='#detalle_".$row['id_barrio']."' class='btn btn-success form-control' data-toggle='modal'><span class='fa fa-search'></span></a>
-                                    </td>";
-
-                                    echo "<td>
-                                    <a href='#edit_".$row['id_barrio']."' class='btn btn-warning form-control' data-toggle='modal'><span class='fa fa-pencil'></span></a>
-                                    </td>";
-                                    echo "<td> <a href='#delete_".$row['id_barrio']."' class='btn btn-danger form-control' data-toggle='modal'><span class='fa fa-trash'></span></a>
-                                    </td>
-                                    </tr>
+                                    <td>".$row['ruta_img']."</td>
+                                    <td>".$row['Nombre']."</td>
+                                    <td>".$row['DescProduc']."</td>
+                                    <td>".$row['descrip_marca']."</td>
+                                    <td>".$row['descrip_negocio']."</td>
+                                    <td>".$row['precio']."</td>
+                                    <td>".$row['fecha_modificacion']."</td>
+                                    
                                     ";
-                                    include('edit_delete_modal.php');
-                                    include 'detalle.php';
+                                   
                                 }
 
                                 ?>
