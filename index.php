@@ -7,6 +7,7 @@
 
 
     <link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/fondo_principal.css">
     <link rel="stylesheet" type="text/css" href="lib/datatables/css/dataTables.bootstrap4.min.css">
 
     <!-- <link rel="stylesheet" href="assets/css/scrolling-nav.css"> -->
@@ -25,23 +26,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="index.php">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="#">Armar Presupuesto</a>
-                    </li>
                     
-                    <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="#">Productos</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="mod_negocios/index.php">Negocios</a>
-                    </li>
-                     <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="mod_marcas/index.php">Marcas</a>
-                    </li>
                 </ul>
             </div>
         </div>
@@ -50,63 +35,35 @@
 
     
     <div class="container">
-        <h1 class="page-header text-center">Buscador</h1>
-        <div class="row">
+
+        <div class="row" style="margin-top: 20%; align-self: auto;">
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 
-                <div class="row col-sm-12">
-                    <input type="image" src="assets/img/new_materiales.jpg" style="border-radius: 8px;" width= "20%", height="10%"  name=""> <span class="fa fa-plus"></span> Nueva Marca</a>
-                    <a href="#addnew" data-toggle="modal" class="btn btn-secondary"><span class="fa fa-plus"></span>Nuevo Negocio</a>
-                    <a href="#addnew" data-toggle="modal" class="btn btn-success"><span class="fa fa-plus"></span> Nuevo Producto</a>
-                    <a href="#addnew" data-toggle="modal" class="btn btn-info"><span class="fa fa-plus"></span> Actualizar Stock</a>
+                <div id="row" class="row col-sm-12">
+
+                    <a href="mod_buscador/buscador.php" type="button"  class="btn btn-info btn-lg">Buscador</a>
+
+                    <a href="" type="button"  class="btn btn-primary btn-lg" >Agregar Productos</a>
+
+
+                    <a type="button"  href="mod_marcas/index.php" class="btn btn-success btn-lg">Agregar Marcas </a>
+
+
+                    <a type="button" href="mod_negocios/index.php"   class="btn btn-danger btn-lg" >Agregar Negocio</a>
+
+
+                      <a type="button" href="" class="btn btn-warning btn-lg" >Relaizar Presupuesto</a>
+                           
+                    
+                    
+
+                   
+
+
                 </div>
                 <br>
 
-                <div class="row">
-                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                        <table id="myTable" class="table table-bordered table-striped display wrap"  width="100%">
-
-                            <thead>
-                                <th>Imagen</th>
-                                <td>Nombre</td>
-                                <td>Descripcion del Producto</td>
-                                <th>Marca</th>
-                                <th>Negocio</th>
-                                <th>Precio</th>
-                                <th>Fecha de Modificacion</th>
-                            </thead>
-                            <tbody>
-
-
-                                <?php
-                                include_once('conexion/conexion.php');
-                                $sql = "SELECT * FROM productos p1, negocio n1, marca m1 WHERE p1.id_negocio = n1.id_negocio AND p1.id_marca = m1.id_marca";
-
-                                $query = $conexion->query($sql);
-                                while($row = $query->fetch_assoc()){
-                                    echo 
-                                    "<tr>
-                                    <td>".$row['ruta_img']."</td>
-                                    <td>".$row['Nombre']."</td>
-                                    <td>".$row['DescProduc']."</td>
-                                    <td>".$row['descrip_marca']."</td>
-                                    <td>".$row['descrip_negocio']."</td>
-                                    <td>".$row['precio']."</td>
-                                    <td>".$row['fecha_modificacion']."</td>
-                                    
-                                    ";
-                                   
-                                }
-
-                                ?>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
+            
 <script src="lib/jquery/jquery.min.js"></script>
         <script src="lib/bootstrap/js/bootstrap.min.js"></script>
         <script src="lib/datatables/js/jquery.dataTables.min.js"></script>
