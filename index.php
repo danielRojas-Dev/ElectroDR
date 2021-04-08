@@ -15,9 +15,11 @@
 
 </head>
 <body>
+
+
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
         <div class="container">
-            <a class="navbar-brand js-scroll-trigger" href="#page-top">Electro DR</a>
+            <a class="navbar-brand js-scroll-trigger" href="index.php">Electro DR</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -50,7 +52,7 @@
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 
                 <div class="row col-sm-12">
-                    <input type="image" src="assets/img/new_materiales.jpg" style="border-radius: 16.3;" width= "20%", height="10%"  name=""> <span class="fa fa-plus"></span> Nueva Marca</a>
+                    <input type="image" src="assets/img/new_materiales.jpg" style="border-radius: 8px;" width= "20%", height="10%"  name=""> <span class="fa fa-plus"></span> Nueva Marca</a>
                     <a href="#addnew" data-toggle="modal" class="btn btn-secondary"><span class="fa fa-plus"></span>Nuevo Negocio</a>
                     <a href="#addnew" data-toggle="modal" class="btn btn-success"><span class="fa fa-plus"></span> Nuevo Producto</a>
                     <a href="#addnew" data-toggle="modal" class="btn btn-info"><span class="fa fa-plus"></span> Actualizar Stock</a>
