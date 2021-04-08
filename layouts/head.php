@@ -35,7 +35,7 @@ session_start();
                     </li>
                     
                     <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="#">Productos</a>
+                        <a class="nav-link js-scroll-trigger" href="../mod_productos/index.php">Productos</a>
                     </li>
 
                     <li class="nav-item">

@@ -2,7 +2,7 @@
 
 
 <div class="container">
-	<h1 class="page-header text-center">Editar Frecuencia</h1>
+	<h1 class="page-header text-center">Editar Marcas</h1>
 	<div class="row">
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 
