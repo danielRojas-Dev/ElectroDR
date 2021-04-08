@@ -23,41 +23,20 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Personas
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="mod_barrios/index.php">Barrios</a>
-                                <a class="dropdown-item" href="mod_proveedores/index.php">Proveedores</a>
-                                <a class="dropdown-item" href="#">Empleados</a>
-                            </div>
-                        </li>
-
-                    <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Articulos
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="mod_tip_articulos/index.php">Tipo de Articulos</a>
-                                <a class="dropdown-item" href="#">Articulos</a>
-                                <a class="dropdown-item" href="mod_formas_pagos/index.php">Formas de pago</a>
-                                <a class="dropdown-item" href="mod_unida_medidas/index.php">Unidad de Medidas</a>
-                            </div>
-                        </li>
                     <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="#">Ventas</a>
+                        <a class="nav-link js-scroll-trigger" href="#">Armar Presupuesto</a>
                     </li>
-                    <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Usuarios
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="mod_tip_usuario/index.php">Tipos de Usuarios</a>
-                                <a class="dropdown-item" href="mod_est_usuario/index.php">Estado de Usuarios</a>
-                                <a class="dropdown-item" href="#">Usuario</a>
-                            </div>
-                        </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#">Productos</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#">Negocio</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="mod_marcas/index.php">Marcas</a>
+                    </li>
                 </ul>
             </div>
         </div>
