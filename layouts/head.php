@@ -28,6 +28,9 @@ session_start();
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="../index.php">Inicio</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link js-scroll-trigger" href="#">Armar Presupuesto</a>
                     </li>
                     
@@ -36,7 +39,7 @@ session_start();
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="#">Negocio</a>
+                        <a class="nav-link js-scroll-trigger" href="../mod_negocios/index.php">Negocios</a>
                     </li>
                      <li class="nav-item">
                         <a class="nav-link js-scroll-trigger" href="../mod_marcas/">Marcas</a>
