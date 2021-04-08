@@ -71,7 +71,7 @@
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 
                 <div class="row col-sm-12">
-                    <a href="#addnew" data-toggle="modal" type="botton" class="btn btn-primary"><span class="fa fa-plus"></span> Nueva Marca</a>
+                    <input type="image" src="assets/img/new_materiales.jpg" style="border-radius: 16.3;" width= "20%", height="10%"  name=""> <span class="fa fa-plus"></span> Nueva Marca</a>
                     <a href="#addnew" data-toggle="modal" class="btn btn-secondary"><span class="fa fa-plus"></span>Nuevo Negocio</a>
                     <a href="#addnew" data-toggle="modal" class="btn btn-success"><span class="fa fa-plus"></span> Nuevo Producto</a>
                     <a href="#addnew" data-toggle="modal" class="btn btn-info"><span class="fa fa-plus"></span> Actualizar Stock</a>
