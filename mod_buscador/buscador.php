@@ -40,10 +40,10 @@
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link js-scroll-trigger" href="mod_negocios/index.php">Negocios</a>
+                                <a class="nav-link js-scroll-trigger" href="../mod_negocios/index.php">Negocios</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link js-scroll-trigger" href="mod_marcas/index.php">Marcas</a>
+                                <a class="nav-link js-scroll-trigger" href="../mod_marcas/index.php">Marcas</a>
                             </li>
                         </ul>
                     </div>
