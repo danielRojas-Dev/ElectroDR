@@ -5,6 +5,7 @@
 <script src="../lib/datatables/js/dataTables.responsive.min.js"></script>
 <script src="../lib/datatables/js/responsive.bootstrap4.min.js"></script>
 <script src="../assets/js/data_table.js"></script>
+<script src="../assets/js/pwa.js" ></script>
 <!-- <script src="../assets/js/scrolling-nav.js"></script> -->
 
 

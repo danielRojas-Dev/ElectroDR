@@ -1,58 +1,9 @@
-        <!DOCTYPE html>
-        <html lang="en">
-        <head>
-            <meta charset="UTF-8">
-            <title>Inicio</title>
-            <meta content="width=device-width, initial-scale=1.0" name="viewport">
+<?php require_once '../layouts/head.php'; ?>
 
-
-            <link rel="stylesheet" type="text/css" href="../lib/bootstrap/css/bootstrap.min.css">
-            <link rel="stylesheet" type="text/css" href="../lib/datatables/css/dataTables.bootstrap4.min.css">
-
-            <!-- <link rel="stylesheet" href="assets/css/scrolling-nav.css"> -->
-            <link rel="stylesheet" type="text/css" href="../lib/font-awesome/css/font-awesome.min.css">
-            <link rel="stylesheet" type="text/css" href="../lib/datatables/css/responsive.bootstrap4.min.css">
-
-        </head>
-        <body>
-
-
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-                <div class="container">
-                    <a class="navbar-brand js-scroll-trigger" href="index.php">Electro DR</a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarResponsive">
-                        <ul class="navbar-nav ml-auto">
-                            <li class="nav-item">
-                                <a class="nav-link js-scroll-trigger" href="index.php">Inicio</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link js-scroll-trigger" href="../mod_buscador/buscador.php">Buscador</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link js-scroll-trigger" href="#">Realizar Presupuesto</a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link js-scroll-trigger" href="#">Agregar Produtos</a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link js-scroll-trigger" href="../mod_negocios/index.php">Negocios</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link js-scroll-trigger" href="../mod_marcas/index.php">Marcas</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-            <br> <br> <br> <br>
 <div class="container">
+    <h1 class="page-header text-center">Buscador</h1>
             <div class="row">
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="background-color: rgb(0,0,0,0.30); border-radius: 0.50rem;">
                     <table id="myTable" class="table table-bordered table-striped display wrap"  width="100%">
 
                         <thead>
@@ -64,6 +15,7 @@
                             <th>Precio</th>
                             <th>Fecha de Modificacion</th>
                         </thead>
+
                         <tbody>
 
 
@@ -75,9 +27,9 @@
                             while($row = $query->fetch_assoc()){
                                 echo 
                                 "<tr>
-                                <td>".$row['ruta_img']."</td>
-                                <td>".$row['Nombre']."</td>
-                                <td>".$row['DescProduc']."</td>
+                                <td><img  style='width:100%;' src=".$row['ruta_img']."></td>;
+                                <td>".$row['nombre']."</td>
+                                <td>".$row['desc_produc']."</td>
                                 <td>".$row['descrip_marca']."</td>
                                 <td>".$row['descrip_negocio']."</td>
                                 <td>".$row['precio']."</td>
@@ -96,15 +48,4 @@
     </div>
 </div>
 
-<script src="../lib/jquery/jquery.min.js"></script>
-<script src="../lib/bootstrap/js/bootstrap.min.js"></script>
-<script src="../lib/datatables/js/jquery.dataTables.min.js"></script>
-<script src="../lib/datatables/js/dataTables.bootstrap4.min.js"></script>
-<script src="../lib/datatables/js/dataTables.responsive.min.js"></script>
-<script src="../lib/datatables/js/responsive.bootstrap4.min.js"></script>
-<script src="../assets/js/data_table.js"></script>
-<!-- <script src="assets/js/scrolling-nav.js"></script> -->
-
-
-</body>
-</html>
+<?php require_once '../layouts/footer.php'; ?>

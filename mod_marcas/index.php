@@ -3,7 +3,7 @@
 <div class="container">
 	<h1 class="page-header text-center">Listado Marcas</h1>
 	<div class="row">
-		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="background-color: rgb(0,0,0,0.30); border-radius: 0.50rem;">
 			<div>
 				<a href="nuevaMarca.php" class="btn btn-primary"><span class="fa fa-plus"></span> Nueva Marca</a>
 			</div>
