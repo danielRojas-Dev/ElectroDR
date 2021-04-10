@@ -32,7 +32,7 @@
             <a class="navbar-brand js-scroll-trigger" href="index.php">Electro DR</a>
             
             
-              
+            
             
         </div>
     </nav>
@@ -68,10 +68,10 @@
 
 
 
-                   
+        
 
 
-<script src="lib/jquery/jquery.min.js"></script>
+        <script src="lib/jquery/jquery.min.js"></script>
         <script src="lib/bootstrap/js/bootstrap.min.js"></script>
         <script src="lib/datatables/js/jquery.dataTables.min.js"></script>
         <script src="lib/datatables/js/dataTables.bootstrap4.min.js"></script>

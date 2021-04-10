@@ -12,6 +12,5 @@
 		. $conexion->connect_errno . ") " . $conexion->connect_errno;
 	}
 
-	
 	$conexion->set_charset("utf8");
  ?>
