@@ -4,9 +4,14 @@
 <head>
 	<meta charset="UTF-8">
 	<title>ElectroDR</title>
-	<meta content="width=device-width, initial-scale=1.0" name="viewport">
+	    <meta name="description" content="Bienvenido a ElectroDR :)">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta name="MobileOptimized" content="width">
     <meta name="HandheldFriendly" content="true">
+    <link rel="shortcut icon" type="image/png" href="assets/img/icon_Shortcut.png">
+    <link rel="apple-touch-icon" href="assets/img/icon_Shortcut.png">
+    <link rel="apple-touch-startup-image"  href="assets/img/icon_Shortcut.png">
+   
 
     <link rel="manifest" href="assets/json/manifest.json">
 
@@ -36,7 +41,7 @@
                                 <a class="nav-link js-scroll-trigger" href="../mod_buscador/buscador.php">Buscador</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link js-scroll-trigger" href="#">Realizar Presupuesto</a>
+                                <a class="nav-link js-scroll-trigger" href="../mod_presupuestos/index.php">Realizar Presupuesto</a>
                             </li>
 
                             <li class="nav-item">

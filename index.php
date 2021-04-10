@@ -58,13 +58,14 @@
                     <a type="button" href="mod_negocios/index.php"  style="align-self: auto; "  class="btn btn-danger btn-lg" >Agregar Negocio</a>
 
 
-                    <a type="button" href="" style="align-self: auto;" class="btn btn-warning btn-lg" >Relaizar Presupuesto</a>
+                    <a type="button" href="mod_presupuestos/index.php" style="align-self: auto;" class="btn btn-warning btn-lg" >Realizar Presupuesto</a>
 
                 </div>          
                 
             </div>  
 
         </div>  
+
 
 
                    
