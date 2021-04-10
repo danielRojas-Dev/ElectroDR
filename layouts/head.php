@@ -13,7 +13,7 @@
     <link rel="apple-touch-startup-image"  href="assets/img/icon_Shortcut.png">
    
 
-    <link rel="manifest" href="assets/json/manifest.json">
+    <link rel="manifest" href="../assets/json/manifest.json">
 
 
 	<link rel="stylesheet" type="text/css" href="../lib/bootstrap/css/bootstrap.min.css">
