@@ -9,7 +9,7 @@
 	"display":"standalone",
 	"start_url":"../../?utm_source=web_app_manifest",
 	"scope":"../../",
-	"lang":"es-ARG",
+	"lang":"es-MX",
 	"icons":[
 
 		{
