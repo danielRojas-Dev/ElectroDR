@@ -7,9 +7,9 @@
 	"theme_color":"#ffff",
 	"orientation":"portrait",
 	"display":"standalone",
-	"start_url":"../../?utm_source=web_app_manifest",
+	"start_url":"../../index.php",
 	"scope":"../../",
-	"lang":"es-MX",
+	"lang":"es-MEX",
 	"icons":[
 
 		{

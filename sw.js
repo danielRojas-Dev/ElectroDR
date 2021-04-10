@@ -1,23 +1,23 @@
-;
+// ;
 //asignar un nombre y versión al cache
 const CACHE_NAME = 'v1_cache_ElectroDR',
 urlsToCache = [
-'index.php',
+'./index.php',
 'https://fonts.googleapis.com/css?family=Raleway:400,700',
 'https://fonts.gstatic.com/s/raleway/v12/1Ptrg8zYS_SKggPNwJYtWqZPAA.woff2',
 'https://use.fontawesome.com/releases/v5.0.7/css/all.css',
 'https://use.fontawesome.com/releases/v5.0.6/webfonts/fa-brands-400.woff2',
-'../../lib/bootstrap/css/bootstrap.min.css',
-'../../assets/css/fondo_principal.css',
-'../../lib//datatables/css/dataTables.bootstrap4.min.css',
-'../../lib/bootstrap/js/bootstrap.min.js',
-'../../lib/datatables/js/jquery.dataTables.min.js',
-'../../lib/datatables/js/dataTables.bootstrap4.min.js',
-'../../lib/datatables/js/dataTables.responsive.min.js',
-'../../lib/datatables/js/responsive.bootstrap4.min.js',
-'../../assets/js/data_table.js',
-'../img/fondo_principal.jpg',
-'../img/icon_Shortcut.png',
+'./lib/bootstrap/css/bootstrap.min.css',
+'./assets/css/fondo_principal.css',
+'./lib//datatables/css/dataTables.bootstrap4.min.css',
+'./lib/bootstrap/js/bootstrap.min.js',
+'./lib/datatables/js/jquery.dataTables.min.js',
+'./lib/datatables/js/dataTables.bootstrap4.min.js',
+'./lib/datatables/js/dataTables.responsive.min.js',
+'./lib/datatables/js/responsive.bootstrap4.min.js',
+'./assets/js/data_table.js',
+'./assets/img/fondo_principal.jpg',
+'./assets/img/icon_Shortcut.png',
 ]
 
 //durante la fase de instalación, generalmente se almacena en caché los activos estáticos
@@ -28,7 +28,7 @@ self.addEventListener('install', e => {
       return cache.addAll(urlsToCache)
       .then(() => self.skipWaiting())
     })
-    .catch(err => console.log('Falló registro de cache', err))
+    .catch(err => console.log('Falló registro de cache:', err))
     )
 })
 
