@@ -7,9 +7,13 @@
 	"theme_color":"#ffff",
 	"orientation":"portrait",
 	"display":"standalone",
+<<<<<<< HEAD
 	"start_url":"./?utm_source=web_app_manifest",
+=======
+	"start_url":"../../index.php",
+>>>>>>> refs/remotes/origin/main
 	"scope":"../../",
-	"lang":"es-MX",
+	"lang":"es-MEX",
 	"icons":[
 
 		{
