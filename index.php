@@ -62,7 +62,7 @@
                 <div class="card-body">
                     <div class="table-responsive">
                       <!-- Aca va el formulario -->
-                      <a href="mod_buscador/buscador.php"><img style="display: block; margin-left: auto; margin-right: auto;" src="assets/img/agregar_negocio.png" alt="200" width="200" height="200"></a>
+                      <a href="mod_productos/index.php"><img style="display: block; margin-left: auto; margin-right: auto;" src="assets/img/agregar_negocio.png" alt="200" width="200" height="200"></a>
                   </div>
               </div>
           </div>          
@@ -76,7 +76,7 @@
                 <div class="card-body">
                     <div class="table-responsive">
                       <!-- Aca va el formulario -->
-                      <a href="mod_buscador/buscador.php"><img style="display: block; margin-left: auto; margin-right: auto;" src="assets/img/agregar_marcas.png" alt="200" width="200" height="200"></a>
+                      <a href="mod_marcas/index.php"><img style="display: block; margin-left: auto; margin-right: auto;" src="assets/img/agregar_marcas.png" alt="200" width="200" height="200"></a>
                   </div>
               </div>
           </div>          
@@ -90,7 +90,7 @@
                 <div class="card-body">
                     <div class="table-responsive">
                       <!-- Aca va el formulario -->
-                      <a href="mod_buscador/buscador.php"><img style="display: block; margin-left: auto; margin-right: auto;" src="assets/img/negocios.jpg" alt="200" width="200" height="200"></a>
+                      <a href="mod_negocios/index.php"><img style="display: block; margin-left: auto; margin-right: auto;" src="assets/img/negocios.jpg" alt="200" width="200" height="200"></a>
                   </div>
               </div>
           </div>          
@@ -104,7 +104,7 @@
                 <div class="card-body">
                     <div class="table-responsive">
                       <!-- Aca va el formulario -->
-                      <a href="mod_buscador/buscador.php"><img style="display: block; margin-left: auto; margin-right: auto;" src="https://image.freepik.com/vector-gratis/ilustracion-lista-tareas-pendientes_53876-28518.jpg" alt="200" width="200" height="200"></a>
+                      <a href="mod_presupuestos/index.php"><img style="display: block; margin-left: auto; margin-right: auto;" src="https://image.freepik.com/vector-gratis/ilustracion-lista-tareas-pendientes_53876-28518.jpg" alt="200" width="200" height="200"></a>
                   </div>
               </div>
           </div>          
@@ -112,24 +112,6 @@
 
   </div>  
 </div>  
-
-
-               <!-- <div id="row"  style="margin-top: 20%; align-self: auto; margin-right:auto;" class="row col-sm-12">
-
-                    <a href="mod_buscador/buscador.php" type="button" style="align-self: auto;   "  class="btn btn-info btn-lg">Buscador</a>
-
-                    <a href="mod_productos/index.php" type="button" style="align-self: auto; "  class="btn btn-primary btn-lg" >Agregar Productos</a>
-
-
-                    <a type="button"  href="mod_marcas/index.php" style="align-self: auto;  " class="btn btn-success btn-lg">Agregar Marcas </a>
-
-
-                    <a type="button" href="mod_negocios/index.php"  style="align-self: auto; "  class="btn btn-danger btn-lg" >Agregar Negocio</a>
-
-
-                    <a type="button" href="mod_presupuestos/index.php" style="align-self: auto;" class="btn btn-warning btn-lg" >Realizar Presupuesto</a>
-
-                </div>  -->       
 
 
 
