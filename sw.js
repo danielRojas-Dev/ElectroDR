@@ -7,7 +7,6 @@ urlsToCache = [
 'https://fonts.gstatic.com/s/raleway/v12/1Ptrg8zYS_SKggPNwJYtWqZPAA.woff2',
 'https://use.fontawesome.com/releases/v5.0.7/css/all.css',
 'https://use.fontawesome.com/releases/v5.0.6/webfonts/fa-brands-400.woff2',
-<<<<<<< HEAD
 'lib/bootstrap/css/bootstrap.min.css',
 'assets/css/fondo_principal.css',
 'lib//datatables/css/dataTables.bootstrap4.min.css',
@@ -19,7 +18,6 @@ urlsToCache = [
 'assets/js/data_table.js',
 'img/fondo_principal.jpg',
 'img/icon_Shortcut.png',
-=======
 './lib/bootstrap/css/bootstrap.min.css',
 './assets/css/fondo_principal.css',
 './lib//datatables/css/dataTables.bootstrap4.min.css',
@@ -31,7 +29,6 @@ urlsToCache = [
 './assets/js/data_table.js',
 './assets/img/fondo_principal.jpg',
 './assets/img/icon_Shortcut.png',
->>>>>>> refs/remotes/origin/main
 ]
 
 //durante la fase de instalación, generalmente se almacena en caché los activos estáticos
