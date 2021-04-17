@@ -23,6 +23,9 @@ $resultNegocio = $conexion->query($sqlNegocio);
 		<div id="tablaResultBusqueda" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 			
 		</div>
+		<div id="tarjetaResultPresupuesto" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			
+		</div>
 	</div>
 
 
