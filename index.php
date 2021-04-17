@@ -104,7 +104,7 @@
                 <div class="card-body">
                     <div class="table-responsive">
                       <!-- Aca va el formulario -->
-                      <a href="mod_buscador/buscador.php"><img style="display: block; margin-left: auto; margin-right: auto;" src="https://image.freepik.com/vector-gratis/ilustracion-lista-tareas-pendientes_53876-28518.jpg" alt="200" width="200" height="200"></a>
+                      <a href="mod_presupuestos/index.php"><img style="display: block; margin-left: auto; margin-right: auto;" src="https://image.freepik.com/vector-gratis/ilustracion-lista-tareas-pendientes_53876-28518.jpg" alt="200" width="200" height="200"></a>
                   </div>
               </div>
           </div>          

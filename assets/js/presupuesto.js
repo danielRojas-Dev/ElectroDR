@@ -34,9 +34,10 @@ $(document).ready(function() {
 
 		let tabla = `
 		<div>
-		<table id="myTable" class="table table-bordered table-striped display wrap" width="100%">
+		<table id="myTable"  class="table table-bordered table-striped display wrap" width="100%">
 			<thead>
-				<td>Ruta Img</td>
+				<td>Agregar al Presupuesto</td>
+				<td>Imagen</td>
 				<td>Nombre Producto</td>
 				<td>Descripcion Producto</td>
 				<td>Marca</td>
@@ -59,7 +60,7 @@ $(document).ready(function() {
 
 			tabla += `
 			<tr>
-
+				<td><a  type="button" class="btn btn-primary"><span class="fa fa-plus"></span></td>
 				<td><img style='width:100%;' src="${ruta_img}"</td>	
 				<td>${nombre}</td>	
 				<td>${desc_produc}</td>	
@@ -72,11 +73,11 @@ $(document).ready(function() {
 		}
 		
 		tabla += `
-		</tbody>
-		</table>
+		
 		</div>`;
 		divTabla.html(`${tabla}`);
 		// dataTable.;
 		$("#myTable").DataTable({responsive: true});
 	}
 });
+
