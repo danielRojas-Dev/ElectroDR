@@ -1,3 +1,13 @@
+<?php 
+
+	include_once('conexion/conexion.php');
+	
+     $sql = "SELECT * FROM usuario ";
+
+     $query = $conexion->query($sql);
+
+ ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,129 +20,80 @@
     <link rel="shortcut icon" type="image/png" href="assets/img/icon_Shortcut.png">
     <link rel="apple-touch-icon" href="assets/img/icon_Shortcut.png">
     <link rel="apple-touch-startup-image"  href="assets/img/icon_Shortcut.png">
-    <link rel="manifest" href="assets/json/manifest.json">
+    <link rel="stylesheet" type="text/css" href="assets/css/login.css">
+
+
+    <link rel="manifest" href="../assets/json/manifest.json">
 
 
     <link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/fondo_principal.css">
     <link rel="stylesheet" type="text/css" href="lib/datatables/css/dataTables.bootstrap4.min.css">
 
-    <!-- <link rel="stylesheet" href="assets/css/scrolling-nav.css"> -->
+    <!-- <link rel="stylesheet" href="../assets/css/scrolling-nav.css"> -->
     <link rel="stylesheet" type="text/css" href="lib/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="lib/datatables/css/responsive.bootstrap4.min.css">
-
-    <style>
-        .col-md-3{
-            margin-top: 30px;
-        }
-    </style>
-
-
-</head>
 <body>
+	<div class="container h-100">
+		<div class="d-flex justify-content-center h-100">
+			<div class="user_card">
+				<div class="d-flex justify-content-center">
+					<div class="brand_logo_container">
+						<img src="assets/img/icon_Shortcut.png" class="brand_logo" alt="Logo">
+					</div>
+				</div>
+				<div class="d-flex justify-content-center form_container">
+					<form name="login">
+						<div class="input-group mb-3">
+							<div class="input-group-append">
+								<span class="input-group-text"><i class="fas fa-user"></i></span>
+							</div>
+							<input type="text" name="usuario" class="form-control input_user" value="" placeholder=" Usuario">
+						</div>
+						<div class="input-group mb-2">
+							<div class="input-group-append">
+								<span class="input-group-text"><i class="fas fa-key"></i></span>
+							</div>
+							<input type="password" name="password" class="form-control input_pass" value="" placeholder="Contraseña">
+						</div>
+						<div class="form-group">
+							<div class="custom-control custom-checkbox">
+								<input type="checkbox" class="custom-control-input" id="customControlInline">
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-        <div class="container">
-            <a class="navbar-brand js-scroll-trigger" href="index.php">Electro DR</a>
-        </div>
-    </nav>
-    <br> <br> <br> <br>
-    
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-4 col-md-3">
-                <div class="card">
-                  <div class="card-header">
-                    <h4 class="card-title">Buscador</h4>
-                </div>
-                <div class="card-body">
-                    <div class="table-responsive">
-                      <!-- Aca va el formulario -->
-                      <a href="mod_buscador/buscador.php"><img style="display: block; margin-left: auto; margin-right: auto;" src="assets/img/buscador.jpg" alt="200" width="200" height="200"></a>
-                  </div>
-              </div>
-          </div>          
-      </div> 
+							</div>
+						</div>
+							<div class="d-flex justify-content-center mt-3 login_container">
+				 	<button type="button" name="button" onclick="login()" class="btn login_btn">Iniciar Sesion</button>
+				   </div>
+					</form>
+				</div>
+		
+				
+			</div>
+		</div>
+	</div>
 
-      <div class="col-lg-4 col-md-3 ">
-                <div class="card">
-                  <div class="card-header">
-                    <h4 class="card-title">Agregar Productos</h4>
-                </div>
-                <div class="card-body">
-                    <div class="table-responsive">
-                      <!-- Aca va el formulario -->
-                      <a href="mod_buscador/buscador.php"><img style="display: block; margin-left: auto; margin-right: auto;" src="assets/img/agregar_negocio.png" alt="200" width="200" height="200"></a>
-                  </div>
-              </div>
-          </div>          
-      </div>  
+	<script language="JavaScript"> 
 
-      <div class="col-lg-4 col-md-3">
-                <div class="card">
-                  <div class="card-header">
-                    <h4 class="card-title">Agregar Marcas</h4>
-                </div>
-                <div class="card-body">
-                    <div class="table-responsive">
-                      <!-- Aca va el formulario -->
-                      <a href="mod_buscador/buscador.php"><img style="display: block; margin-left: auto; margin-right: auto;" src="assets/img/agregar_marcas.png" alt="200" width="200" height="200"></a>
-                  </div>
-              </div>
-          </div>          
-      </div> 
+		console.log("$sql['usuario']");
+		function Login(){ 
+			var done=0; 
+			var usuario=document.login.usuario.value; 
+			var password=document.login.password.value; 
+			if (usuario=="$sql['usuario']" && password=="$sql['contraseña']") { 
+				window.location="mod_pantalla_principal/index (2).php"; 
+			} 
 
-      <div class="col-lg-4 col-md-3">
-                <div class="card">
-                  <div class="card-header">
-                    <h4 class="card-title">Agregar Negocio</h4>
-                </div>
-                <div class="card-body">
-                    <div class="table-responsive">
-                      <!-- Aca va el formulario -->
-                      <a href="mod_buscador/buscador.php"><img style="display: block; margin-left: auto; margin-right: auto;" src="assets/img/negocios.jpg" alt="200" width="200" height="200"></a>
-                  </div>
-              </div>
-          </div>          
-      </div>  
-
-      <div class="col-lg-4 col-md-3">
-                <div class="card">
-                  <div class="card-header">
-                    <h4 class="card-title">Realizar Presupuesto</h4>
-                </div>
-                <div class="card-body">
-                    <div class="table-responsive">
-                      <!-- Aca va el formulario -->
-                      <a href="mod_presupuestos/index.php"><img style="display: block; margin-left: auto; margin-right: auto;" src="https://image.freepik.com/vector-gratis/ilustracion-lista-tareas-pendientes_53876-28518.jpg" alt="200" width="200" height="200"></a>
-                  </div>
-              </div>
-          </div>          
-      </div> 
-
-  </div>  
-</div>  
-
-
-               <!-- <div id="row"  style="margin-top: 20%; align-self: auto; margin-right:auto;" class="row col-sm-12">
-
-                    <a href="mod_buscador/buscador.php" type="button" style="align-self: auto;   "  class="btn btn-info btn-lg">Buscador</a>
-
-                    <a href="mod_productos/index.php" type="button" style="align-self: auto; "  class="btn btn-primary btn-lg" >Agregar Productos</a>
-
-
-                    <a type="button"  href="mod_marcas/index.php" style="align-self: auto;  " class="btn btn-success btn-lg">Agregar Marcas </a>
-
-
-                    <a type="button" href="mod_negocios/index.php"  style="align-self: auto; "  class="btn btn-danger btn-lg" >Agregar Negocio</a>
-
-
-                    <a type="button" href="mod_presupuestos/index.php" style="align-self: auto;" class="btn btn-warning btn-lg" >Realizar Presupuesto</a>
-
-                </div>  -->       
-
-
-
+			if (usuario=="" && password=="") { 
+				window.location="errorpopup.html"; 
+			} 
+		} 
+	</script> 
+</center> 
+<script language="Javascript"> 
+	<!-- Begin 
+	document.oncontextmenu = function(){return false} 
+// End --> 
+</script>
 
 <script src="lib/jquery/jquery.min.js"></script>
 <script src="lib/bootstrap/js/bootstrap.min.js"></script>
