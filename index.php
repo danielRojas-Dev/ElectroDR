@@ -1,10 +1,6 @@
+
 <?php 
 
-	include_once('conexion/conexion.php');
-	
-     $sql = "SELECT * FROM usuario ";
-
-     $query = $conexion->query($sql);
 
  ?>
 
@@ -23,7 +19,7 @@
     <link rel="stylesheet" type="text/css" href="assets/css/login.css">
 
 
-    <link rel="manifest" href="../assets/json/manifest.json">
+    <link rel="manifest" href="assets/json/manifest.json">
 
 
     <link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.min.css">
@@ -42,7 +38,7 @@
 					</div>
 				</div>
 				<div class="d-flex justify-content-center form_container">
-					<form name="login">
+					<form name="login" action="mod_login/script_acceso.php" method="POST">
 						<div class="input-group mb-3">
 							<div class="input-group-append">
 								<span class="input-group-text"><i class="fas fa-user"></i></span>
@@ -62,7 +58,7 @@
 							</div>
 						</div>
 							<div class="d-flex justify-content-center mt-3 login_container">
-				 	<button type="button" name="button" onclick="login()" class="btn login_btn">Iniciar Sesion</button>
+				 	<input type="submit"  class="btn login_btn" value="Iniciar Sesion">
 				   </div>
 					</form>
 				</div>
@@ -72,28 +68,9 @@
 		</div>
 	</div>
 
-	<script language="JavaScript"> 
 
-		console.log("$sql['usuario']");
-		function Login(){ 
-			var done=0; 
-			var usuario=document.login.usuario.value; 
-			var password=document.login.password.value; 
-			if (usuario=="$sql['usuario']" && password=="$sql['contraseña']") { 
-				window.location="mod_pantalla_principal/index (2).php"; 
-			} 
 
-			if (usuario=="" && password=="") { 
-				window.location="errorpopup.html"; 
-			} 
-		} 
-	</script> 
-</center> 
-<script language="Javascript"> 
-	<!-- Begin 
-	document.oncontextmenu = function(){return false} 
-// End --> 
-</script>
+
 
 <script src="lib/jquery/jquery.min.js"></script>
 <script src="lib/bootstrap/js/bootstrap.min.js"></script>
@@ -103,6 +80,7 @@
 <script src="lib/datatables/js/responsive.bootstrap4.min.js"></script>
 <script src="assets/js/data_table.js"></script>
 <script src="assets/js/pwa.js"></script>
+
 <!-- <script src="assets/js/scrolling-nav.js"></script> -->
 
 

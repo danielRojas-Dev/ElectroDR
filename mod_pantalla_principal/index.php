@@ -7,24 +7,29 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta name="MobileOptimized" content="width">
     <meta name="HandheldFriendly" content="true">
-    <link rel="shortcut icon" type="image/png" href="assets/img/icon_Shortcut.png">
-    <link rel="apple-touch-icon" href="assets/img/icon_Shortcut.png">
-    <link rel="apple-touch-startup-image"  href="assets/img/icon_Shortcut.png">
-    <link rel="manifest" href="assets/json/manifest.json">
+    <link rel="shortcut icon" type="../image/png" href="assets/img/icon_Shortcut.png">
+    <link rel="apple-touch-icon" href="../assets/img/icon_Shortcut.png">
+    <link rel="apple-touch-startup-image"  href="../assets/img/icon_Shortcut.png">
+    <link rel="manifest" href="../assets/json/manifest.json">
 
 
-    <link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/fondo_principal.css">
-    <link rel="stylesheet" type="text/css" href="lib/datatables/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" type="text/css" href="../lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/fondo_principal.css">
+    <link rel="stylesheet" type="text/css" href="../lib/datatables/css/dataTables.bootstrap4.min.css">
 
     <!-- <link rel="stylesheet" href="assets/css/scrolling-nav.css"> -->
-    <link rel="stylesheet" type="text/css" href="lib/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="lib/datatables/css/responsive.bootstrap4.min.css">
+    <link rel="stylesheet" type="text/css" href="../lib/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../lib/datatables/css/responsive.bootstrap4.min.css">
 
     <style>
         .col-md-3{
             margin-top: 30px;
+            margin-bottom: 5%;
+
         }
+
+         
+            
     </style>
 
 
@@ -33,7 +38,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
         <div class="container">
-            <a class="navbar-brand js-scroll-trigger" href="index.php">Electro DR</a>
+            <a class="navbar-brand js-scroll-trigger" href="../mod_pantalla_principal/index.php">Electro DR</a>
         </div>
     </nav>
     <br> <br> <br> <br>
@@ -48,7 +53,7 @@
                 <div class="card-body">
                     <div class="table-responsive">
                       <!-- Aca va el formulario -->
-                      <a href="mod_buscador/buscador.php"><img style="display: block; margin-left: auto; margin-right: auto;" src="assets/img/buscador.jpg" alt="200" width="200" height="200"></a>
+                      <a href="../mod_buscador/buscador.php"><img style="display: block; margin-left: auto; margin-right: auto;" src="../assets/img/buscador.jpg" alt="200" width="200" height="200"></a>
                   </div>
               </div>
           </div>          
@@ -62,7 +67,7 @@
                 <div class="card-body">
                     <div class="table-responsive">
                       <!-- Aca va el formulario -->
-                      <a href="mod_buscador/buscador.php"><img style="display: block; margin-left: auto; margin-right: auto;" src="assets/img/agregar_negocio.png" alt="200" width="200" height="200"></a>
+                      <a href="../mod_productos/index.php"><img style="display: block; margin-left: auto; margin-right: auto;" src="../assets/img/agregar_negocio.png" alt="200" width="200" height="200"></a>
                   </div>
               </div>
           </div>          
@@ -76,7 +81,7 @@
                 <div class="card-body">
                     <div class="table-responsive">
                       <!-- Aca va el formulario -->
-                      <a href="mod_buscador/buscador.php"><img style="display: block; margin-left: auto; margin-right: auto;" src="assets/img/agregar_marcas.png" alt="200" width="200" height="200"></a>
+                      <a href="../mod_marcas/index.php"><img style="display: block; margin-left: auto; margin-right: auto;" src="../assets/img/agregar_marcas.png" alt="200" width="200" height="200"></a>
                   </div>
               </div>
           </div>          
@@ -85,12 +90,12 @@
       <div class="col-lg-4 col-md-3">
                 <div class="card">
                   <div class="card-header">
-                    <h4 class="card-title">Agregar Negocio</h4>
+                    <h4 class="card-title">Agregar Negocios</h4>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
                       <!-- Aca va el formulario -->
-                      <a href="mod_buscador/buscador.php"><img style="display: block; margin-left: auto; margin-right: auto;" src="assets/img/negocios.jpg" alt="200" width="200" height="200"></a>
+                      <a href="../mod_negocios/index.php"><img style="display: block; margin-left: auto; margin-right: auto;" src="../assets/img/negocios.jpg" alt="200" width="200" height="200"></a>
                   </div>
               </div>
           </div>          
@@ -99,12 +104,26 @@
       <div class="col-lg-4 col-md-3">
                 <div class="card">
                   <div class="card-header">
-                    <h4 class="card-title">Realizar Presupuesto</h4>
+                    <h4 class="card-title">Realizar Presupuestos</h4>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
                       <!-- Aca va el formulario -->
-                      <a href="mod_presupuestos/index.php"><img style="display: block; margin-left: auto; margin-right: auto;" src="https://image.freepik.com/vector-gratis/ilustracion-lista-tareas-pendientes_53876-28518.jpg" alt="200" width="200" height="200"></a>
+                      <a href="../mod_presupuestos/index.php"><img style="display: block; margin-left: auto; margin-right: auto;" src="https://image.freepik.com/vector-gratis/ilustracion-lista-tareas-pendientes_53876-28518.jpg" alt="200" width="200" height="200"></a>
+                  </div>
+              </div>
+          </div>          
+      </div> 
+
+       <div class="col-lg-4 col-md-3">
+                <div class="card">
+                  <div class="card-header">
+                    <h4 class="card-title">Cerrar Sesion</h4>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                      <!-- Aca va el formulario -->
+                      <a href="../mod_login/desconectar_usuario.php"><img style="display: block; margin-left: auto; margin-right: auto;" src="../assets/img/cerrar_sesion" alt="200" width="200" height="200"></a>
                   </div>
               </div>
           </div>          
