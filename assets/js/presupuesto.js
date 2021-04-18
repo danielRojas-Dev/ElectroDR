@@ -96,9 +96,11 @@ $(document).ready(function() {
 		while(true){
 			cantProducto = prompt("Ingrese la cantidad de productos: ");
 
-			if(!isNaN(cantProducto) && cantProducto != null && cantProducto != "" && cantProducto > 0){
+			if(!isNaN(cantProducto) && cantProducto != null && cantProducto != "" && cantProducto > 0 && Number.isInteger(parseInt(cantProducto))){
 				break;
-			}else{
+			}else if(!cantProducto){
+				return;
+			}else{	
 				alert('Ingrese un numero valido para las cantidades del producto!');
 				continue;
 			}
@@ -124,13 +126,13 @@ $(document).ready(function() {
 
 		tablaPresupuestoFinal = `
 		<br>
-		<div class="card text-center">
+		<div class="tablaPdf card text-center">
 		<div class="card-header">
 		<h1>Presupuesto de: ${(nombreNegocio) ? nombreNegocio : ""}</h1>
 		</div>
 		<div class="card-body">
 		<h5 class="card-title">Listado Productos: </h5>
-<div class="table-responsive">
+		<div class="table-responsive">
 		<table id="myTableProductos"  class="table table-bordered table-dark table-striped display wrap" width="100%">
 		<thead>
 		<tr>
@@ -173,14 +175,14 @@ $(document).ready(function() {
 		
 
 		tablaPresupuestoFinal += `
-
 		</tbody>
 		</table>
 		</div>
-		<input type="button" name="limpiarListaPresupuest" id="limpiarListaPresupuesto" class="btn btn-warning form-control" value="Vacia Lista">
+		<input type="button" name="limpiarListaPresupuest" id="limpiarListaPresupuesto" class="btn btn-warning" value="Vacia Lista">
+		<input type="button" name="pdfListaPresupuest" id="pdfListaPresupuesto" class="btn btn-info" value="imprimir Lista">
 		</div>
 		<div class="card-footer">
-		Presupuesto Final es de $: ${precioTotal}
+		<h5>Presupuesto Final es de $: ${precioTotal}</h5>
 		</div>
 		</div>`;
 		
@@ -204,6 +206,37 @@ $(document).ready(function() {
 		let idProductoLista = e.target.getAttribute("data-idListadoProductos");
 		localStorage.removeItem(idProductoLista);
 		aniadirProductoAlPresupuesto();
+	});
+
+	$(document).on("click", "#pdfListaPresupuesto", function(e){
+
+		var pdf = new jsPDF('p', 'pt', 'letter');
+        source = $('.tablaPdf')[0];
+
+        specialElementHandlers = {
+            '#bypassme': function (element, renderer) {
+                return true
+            }
+        };
+        margins = {
+            top: 80,
+            bottom: 60,
+            left: 40,
+            width: 522
+        };
+
+        pdf.fromHTML(
+            source, 
+            margins.left, // x coord
+            margins.top, { // y coord
+                'width': margins.width, 
+                'elementHandlers': specialElementHandlers
+            },
+
+            function (dispose) {
+                pdf.save('Prueba.pdf');
+            }, margins
+        );
 	});
 
 });	
