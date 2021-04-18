@@ -1,4 +1,7 @@
 $(document).ready(function() {
+
+	localStorage.clear();
+
 	$('#negocioPresupuesto').on('change',function(e){
 		const valor = $(this).children("option:selected").text();
 
@@ -17,8 +20,6 @@ $(document).ready(function() {
 			url: '../mod_presupuestos/buscadorProductos.php',
 			data: data,
 			success: function(response){
-				// return ;
-				// response
 				armarTabla(JSON.parse(response));
 			},
 			error: function() {
@@ -34,7 +35,7 @@ $(document).ready(function() {
 
 		let tabla = `
 		<div>
-		<table id="myTable"  class="table table-bordered table-striped display wrap" width="100%">
+		<table id="myTable" class="table table-bordered table-striped display wrap" width="100%">
 		<thead>
 		<td>Imagen</td>
 		<td>Nombre Producto</td>
@@ -54,13 +55,14 @@ $(document).ready(function() {
 				descrip_marca,
 				nombre,
 				precio,
-				ruta_img
+				ruta_img,
+				id_productos
 			} = datosTabla[i];
 
 			tabla += `
 			<tr>
 			<td><img style='width:100%;' src="${ruta_img}"</td>	
-			<td><a class="btnProducto" href="#">${nombre}</a></td>	
+			<td><a class="btnProducto" data-IdProducto="${id_productos}"  href="#">${nombre}</a></td>	
 			<td>${desc_produc}</td>	
 			<td>${descrip_marca}</td>	
 			<td>${descrip_negocio}</td>	
@@ -80,7 +82,9 @@ $(document).ready(function() {
 
 	$(document).on("click", ".btnProducto", function(e){
 		let nombreProducto = e.target.text;
+		let idProducto = e.target.getAttribute("data-IdProducto");
 		let datosProductos = [];
+		// console.log(idProducto)
 
 		$(this).parents("tr").find("td").each(function() {
 			datosProductos.push($(this).html()); 
@@ -88,42 +92,119 @@ $(document).ready(function() {
 
 		datosProductos.splice(0, 2);
 		datosProductos.unshift(nombreProducto);
-		const cantProducto = prompt("Ingrese la cantidad de productos: ");
+		let cantProducto;
+		while(true){
+			cantProducto = prompt("Ingrese la cantidad de productos: ");
 
-		// localStorage.setItem(longitud, datosProductos)
+			if(!isNaN(cantProducto) && cantProducto != null && cantProducto != "" && cantProducto > 0){
+				break;
+			}else{
+				alert('Ingrese un numero valido para las cantidades del producto!');
+				continue;
+			}
+		}
+		datosProductos.push(cantProducto);
+
+		localStorage.setItem("nombreNegocio", $('#negocioPresupuesto option:selected').text())
+		localStorage.setItem(idProducto, datosProductos)
 
 		aniadirProductoAlPresupuesto();
+		$("html, body").animate({scrollTop: $(this).offset().top},600);
 	});
 
 
 	const aniadirProductoAlPresupuesto = ()=>{
-			console.log(localStorage.getItem("1"));
-
-		for (let i =0; i < localStorage.length; i++) {
-		}
-
 		const tarjetaPresupuestoFinal = $('#tarjetaResultPresupuesto');
+		let precioTotal = 0;
+		let tablaPresupuestoFinal = "";
+		let nombreNegocio = localStorage.getItem("nombreNegocio");
 
-		let tablaPresupuestoFinal = `
+		
+
+
+		tablaPresupuestoFinal = `
 		<br>
 		<div class="card text-center">
-			<div class="card-header">
-			Presupuesto de:
-				</div>
-					<div class="card-body">
-					<h5 class="card-title">Special title treatment</h5>
-					<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-					<a href="#" class="btn btn-primary">Go somewhere</a>
-				</div>
-			<div class="card-footer text-muted">
-			Presupuesto Final es de: 
-			</div>
+		<div class="card-header">
+		<h1>Presupuesto de: ${(nombreNegocio) ? nombreNegocio : ""}</h1>
+		</div>
+		<div class="card-body">
+		<h5 class="card-title">Listado Productos: </h5>
+<div class="table-responsive">
+		<table id="myTableProductos"  class="table table-bordered table-dark table-striped display wrap" width="100%">
+		<thead>
+		<tr>
+		<th scope="col">Nombre Producto</th>
+		<th scope="col">Descripcion Producto</th>
+		<th scope="col">Marca</th>
+		<th scope="col">Cantidad</th>
+		<th scope="col">Precio</th>
+		<th scope="col">Eliminar</th>
+		</tr>
+		</thead>
+		<tbody>
+
+		`;
+
+
+		for(let i = 0; i < localStorage.length; i++) {
+
+			let clave = localStorage.key(i);
+			if (clave != "nombreNegocio"){
+
+				let resultProductos = localStorage.getItem(clave);
+
+				arrayResultProductos = resultProductos.split(',');
+
+				precioTotal += parseInt(arrayResultProductos[4] * parseInt(arrayResultProductos[6]));
+
+				tablaPresupuestoFinal +=`<hr>
+				<tr class="bg-success">
+				<td scope="row">${arrayResultProductos[0]}</td>
+				<td>${arrayResultProductos[1]}</td>
+				<td>${arrayResultProductos[2]}</td>
+				<td>${arrayResultProductos[6]}</td>
+				<td>${parseInt(arrayResultProductos[4]) * parseInt(arrayResultProductos[6])}</td>
+				<td><input type="button" value="Borrar" data-idListadoProductos="${clave}" class="borrarProducto btn btn-danger"></td></td>
+				</tr>`;
+			}
+		}
+
+		
+
+		tablaPresupuestoFinal += `
+
+		</tbody>
+		</table>
+		</div>
+		<input type="button" name="limpiarListaPresupuest" id="limpiarListaPresupuesto" class="btn btn-warning form-control" value="Vacia Lista">
+		</div>
+		<div class="card-footer">
+		Presupuesto Final es de $: ${precioTotal}
+		</div>
 		</div>`;
+		
+
 
 		tarjetaPresupuestoFinal.html(tablaPresupuestoFinal);
+		$("#myTableProductos").DataTable({responsive: true});
+
 
 	}
 
+	$(document).on("click", "#limpiarListaPresupuesto", function(e){
+
+		localStorage.clear();
+
+		aniadirProductoAlPresupuesto();
+	});
+
+	$(document).on("click", ".borrarProducto", function(e){
+
+		let idProductoLista = e.target.getAttribute("data-idListadoProductos");
+		localStorage.removeItem(idProductoLista);
+		aniadirProductoAlPresupuesto();
+	});
 
 });	
 
