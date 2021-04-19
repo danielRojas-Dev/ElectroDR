@@ -7,13 +7,14 @@
             <table id="myTable" class="table table-bordered table-striped display wrap" width="100%">
 
                 <thead>
-                    <th>Imagen</th>
+                    <td>Imagen</td>
                     <td>Nombre</td>
                     <td>Descripcion del Producto</td>
-                    <th>Marca</th>
-                    <th>Negocio</th>
-                    <th>Precio</th>
-                    <th>Fecha de Modificacion</th>
+                    <td>Precio</td>
+                    <td>Marca</td>
+                    <td>Negocio</td>
+                    <td>Fecha de Modificacion</td>
+                    <td>Calcular</td>
                 </thead>
 
                 <tbody>
@@ -27,13 +28,17 @@
                     while($row = $query->fetch_assoc()){
                         echo 
                         "<tr>
-                        <td><img style='width:100%;' src=".$row['ruta_img']."></td>
+                        <td><img style='width:100px;' src=".$row['ruta_img']."></td>
                         <td>".$row['nombre']."</td>
                         <td>".$row['desc_produc']."</td>
+                        <td>".$row['precio']."</td>
                         <td>".$row['descrip_marca']."</td>
                         <td>".$row['descrip_negocio']."</td>
-                        <td>".$row['precio']."</td>
-                        <td>".$row['fecha_modificacion']."</td>";
+                        <td>".$row['fecha_modificacion']."</td>
+                        <td>
+							<a href='#' data-productosNombre='$row[nombre]' data-productosPrecio='$row[precio]' class='btnProductosCalcular btn btn-primary btn-xm'><span class='fa fa-calculator'></span></a>
+							</td>";
+                        
 
                     }
 
@@ -45,5 +50,6 @@
 </div>
 </div>
 </div>
+
 
 <?php require_once '../layouts/footer.php'; ?>

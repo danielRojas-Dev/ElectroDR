@@ -11,14 +11,13 @@
 			<div>
 				<table id="myTable" class="table table-bordered table-striped display wrap" width="100%">
 					<thead>
-
-						<td>ID Producto</td>
+						<td>Imagen</td>
 						<td>Nombre Producto</td>
 						<td>Descripcion Producto</td>
 						<td>Precio</td>
+						<td>Marca</td>
+						<td>Negocio</td>
 						<td>Fecha Modificacion</td>
-						<td>Descripcion Negocio</td>
-						<td>Descripcion Marca</td>
 						<th>Modificar</th>
 						<th>Eliminar</th>
 					</thead>
@@ -32,13 +31,13 @@
 						while($row = $query->fetch_assoc()){
 							echo 
 							"<tr>
-							<td>".$row['id_productos']."</td>
+							<td><img style='width:100px;' src=".$row['ruta_img']."></td>
 							<td>".$row['nombre']."</td>
 							<td>".$row['desc_produc']."</td>
 							<td>".$row['precio']."</td>
-							<td>".$row['fecha_modificacion']."</td>
-							<td>".$row['descrip_negocio']."</td>
 							<td>".$row['descrip_marca']."</td>
+							<td>".$row['descrip_negocio']."</td>
+							<td>".$row['fecha_modificacion']."</td>
 							";
 
 							echo "

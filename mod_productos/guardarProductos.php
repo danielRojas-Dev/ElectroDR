@@ -34,10 +34,11 @@ try {
 			// si se subio el archivo con exito
 			// var_dump(array('estado' => true,'mensaje' => $directorio.$nombre_img));
 			$rutaImg = $directorio.$nombre_img; 
-			$sql_negocios = "INSERT INTO `productos`(`nombre`, `desc_produc`, `ruta_img`, `precio`, `fecha_modificacion`, `id_negocio`, `id_marca`) VALUES ('$nombre_producto', '$desc_produc', '$rutaImg', '$precio_produc', NOW(), '$marca', '$negocio')";
+			$sql_negocios = "INSERT INTO `productos`(`nombre`, `desc_produc`, `ruta_img`, `precio`, `fecha_modificacion`, `id_negocio`, `id_marca`) VALUES ('$nombre_producto', '$desc_produc', '$rutaImg', '$precio_produc', NOW(), '$negocio', '$marca')";
 
-			$result_negocios = $conexion->query($sql_negocios);
-
+			// $result_negocios = $conexion->query($sql_negocios);
+			echo $sql_negocios;
+			die();
 			// mensaje_alerta("Error al subir al archivo");
 
 		}else{

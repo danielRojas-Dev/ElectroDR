@@ -61,7 +61,7 @@ $(document).ready(function() {
 
 			tabla += `
 			<tr>
-			<td><img style='width:100%;' src="${ruta_img}"</td>	
+			<td><img style='width:100px;' src="${ruta_img}"</td>	
 			<td><a class="btnProducto" data-IdProducto="${id_productos}"  href="#">${nombre}</a></td>	
 			<td>${desc_produc}</td>	
 			<td>${descrip_marca}</td>	
@@ -140,7 +140,8 @@ $(document).ready(function() {
 		<th scope="col">Descripcion Producto</th>
 		<th scope="col">Marca</th>
 		<th scope="col">Cantidad</th>
-		<th scope="col">Precio</th>
+		<th scope="col">Precio Unico</th>
+		<th scope="col">Precio Total</th>
 		<th scope="col">Eliminar</th>
 		</tr>
 		</thead>
@@ -166,7 +167,8 @@ $(document).ready(function() {
 				<td>${arrayResultProductos[1]}</td>
 				<td>${arrayResultProductos[2]}</td>
 				<td>${arrayResultProductos[6]}</td>
-				<td>${parseInt(arrayResultProductos[4]) * parseInt(arrayResultProductos[6])}</td>
+				<td>$ ${parseInt(arrayResultProductos[4])}</td>
+				<td>$ ${parseInt(arrayResultProductos[4]) * parseInt(arrayResultProductos[6])}</td>
 				<td><input type="button" value="Borrar" data-idListadoProductos="${clave}" class="borrarProducto btn btn-danger"></td></td>
 				</tr>`;
 			}
@@ -182,7 +184,7 @@ $(document).ready(function() {
 		<input type="button" name="pdfListaPresupuest" id="pdfListaPresupuesto" class="btn btn-info" value="imprimir Lista">
 		</div>
 		<div class="card-footer">
-		<h5>Presupuesto Final es de $: ${precioTotal}</h5>
+		<h5>Presupuesto Final es de $ ${precioTotal}</h5>
 		</div>
 		</div>`;
 		
@@ -208,45 +210,23 @@ $(document).ready(function() {
 		aniadirProductoAlPresupuesto();
 	});
 
-	$(document).on("click", "#pdfListaPresupuesto", function(e){
-
-		var pdf = new jsPDF('p', 'pt', 'letter');
-        source = $('.tablaPdf')[0];
-
-        specialElementHandlers = {
-            '#bypassme': function (element, renderer) {
-                return true
-            }
-        };
-        margins = {
-            top: 80,
-            bottom: 60,
-            left: 40,
-            width: 522
-        };
-
-        pdf.fromHTML(
-            source, 
-            margins.left, // x coord
-            margins.top, { // y coord
-                'width': margins.width, 
-                'elementHandlers': specialElementHandlers
-            },
-
-            function (dispose) {
-                pdf.save('Prueba.pdf');
-            }, margins
-        );
-	});
-
 
 	$('.form-control').keypress(function(e){
-      
-      if(e.charCode == 44){
-         return false;
-      }
 
-   });
+		if(e.charCode == 44){
+			return false;
+		}
+
+	});
+	$(document).on("click", ".btnProductosCalcular", function(e){
+
+		// let productoNombre = $(this).data('productosPrecio');
+		// let productoPrecio = e.target.getAttribute("data-productosPrecio");
+
+		console.log(e)
+		
+	});
+
 
 });	
 

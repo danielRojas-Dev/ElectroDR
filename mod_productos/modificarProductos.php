@@ -12,7 +12,7 @@ $negocio = $_POST['negocio'];
 
 try {
 	$sql_negocio_upd = "UPDATE productos SET nombre= '$nombre_producto', desc_produc= '$desc_produc', precio= '$precio_produc', fecha_modificacion= NOW(), id_negocio= '$negocio', id_marca= '$marca' WHERE id_productos = '$id'";
-
+	
 	$result_negocio_upd = $conexion->query($sql_negocio_upd);
 } catch (Exception $e) {
 

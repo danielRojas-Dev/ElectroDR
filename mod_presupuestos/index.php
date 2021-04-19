@@ -6,7 +6,7 @@ $sqlNegocio = "SELECT * FROM negocio";
 $resultNegocio = $conexion->query($sqlNegocio);
 ?>
 
-<div class="container">
+<div class="container" style="margin-bottom: 5%;">
 	<div class="row">
 		<div class="col-md-12">
 			<div class="form-group">

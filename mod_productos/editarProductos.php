@@ -32,7 +32,7 @@
 
 			<form method="POST" action="modificarProductos.php">
 
-				<input type="hidden" class="form-control" name="id" value="<?php echo $row_upd['id_negocio']; ?>">
+				<input type="hidden" class="form-control" name="id" value="<?php echo $row_upd['id_productos']; ?>">
 
 				<div class="row form-group">
 					<div class="col-sm-12">

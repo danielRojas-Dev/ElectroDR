@@ -24,13 +24,17 @@
     <style>
         .col-md-3{
             margin-top: 30px;
-            margin-bottom: 5%;
+
 
         }
 
+        body{
+          margin-bottom: 30px;
+        }
          
             
     </style>
+        }
 
 
 </head>
