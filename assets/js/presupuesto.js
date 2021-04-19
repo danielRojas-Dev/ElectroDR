@@ -220,10 +220,11 @@ $(document).ready(function() {
 	});
 	$(document).on("click", ".btnProductosCalcular", function(e){
 
-		// let productoNombre = $(this).data('productosPrecio');
-		// let productoPrecio = e.target.getAttribute("data-productosPrecio");
+		 
+		 let productoNombre = $(this).data('data-productosNombre');
 
-		console.log(e)
+		
+			console.log(productoNombre);
 		
 	});
 
