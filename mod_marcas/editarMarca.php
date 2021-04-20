@@ -2,9 +2,9 @@
 
 
 <div class="container">
-	<h1 class="page-header text-center">Editar Marca</h1>
 	<div class="row">
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
 
 			<?php 
 
@@ -20,7 +20,9 @@
 			$row_upd = $result->fetch_assoc();
 			?>
 
-			<form method="POST" action="modificarMarca.php">
+			<form method="POST" style='background-color:#C2C2C2;border-radius: 0.50rem;padding-top: 15px; padding-left:15px; padding-right:15px; padding-bottom:15px;' action="modificarMarca.php">
+
+				<h1 class="page-header text-center">Editar Marcas</h1><br><br>
 
 				<input type="hidden" class="form-control" name="id" value="<?php echo $row_upd['id_marca']; ?>">
 

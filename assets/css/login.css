@@ -3,9 +3,9 @@
 		html {
 			margin: 0;
 			padding: 0;
-			margin-top: 5%;
 			height: 100%;
-			background: #60a3bc !important;
+			background: rgb(13,7,7);
+			background: linear-gradient(180deg, rgba(13,7,7,1) 6%, rgba(8,137,255,1) 62%);
 		}
 		.user_card {
 			height: 400px;

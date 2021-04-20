@@ -2,7 +2,7 @@
 
 
 <div class="container">
-	<h1 class="page-header text-center">Editar Frecuencia</h1>
+
 	<div class="row">
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 
@@ -30,7 +30,11 @@
 
 			?>
 
-			<form method="POST" action="modificarProductos.php">
+			<form method="POST" style='background-color:#C2C2C2;border-radius: 0.50rem;padding-top: 15px; padding-left:15px; padding-right:15px; padding-bottom:15px;' action="modificarProductos.php">
+
+				
+				<h1 class="page-header text-center">Modificar Productos</h1>
+				<br><br>
 
 				<input type="hidden" class="form-control" name="id" value="<?php echo $row_upd['id_productos']; ?>">
 
@@ -93,13 +97,15 @@
 								<?php endwhile ?>
 							</select>
 						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-danger" onClick="location.href='index.php'">Cancelar</button>
+							<button type="submit" class="btn btn-primary">Guardar</a>
+							</form>
+						</div>
 					</div> 
+
 				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-danger" onClick="location.href='index.php'">Cancelar</button>
-					<button type="submit" class="btn btn-primary">Guardar</a>
-					</form>
-				</div>
+				
 			</div>
 		</div>
 

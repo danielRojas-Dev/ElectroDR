@@ -1,9 +1,9 @@
 <?php require_once '../layouts/head.php'; ?>
 
 <div class="container">
-	<h1 class="page-header text-center">Listado Negocios</h1>
 	<div class="row">
-		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="background-color: rgb(0,0,0,0.30); border-radius: 0.50rem;">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style='background-color:#C2C2C2;border-radius: 0.50rem;padding-top: 15px; padding-left:15px; padding-right:15px; padding-bottom:15px;'>
+			<h1 class="page-header text-center">Negocios</h1>
 			<div>
 				<a href="nuevaNegocios.php" class="btn btn-primary"><span class="fa fa-plus"></span> Nuevo Negocio</a>
 			</div>

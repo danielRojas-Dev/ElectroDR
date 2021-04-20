@@ -1,11 +1,11 @@
 <?php require_once '../layouts/head.php'; ?>
 
 <div class="container">
-	<h1 class="page-header text-center">Agregar Nuevo Negocio</h1>
+
 	<div class="row">
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-			<form method="POST" action="guardarNegocios.php">
-
+			<form method="POST" style='background-color:#C2C2C2;border-radius: 0.50rem;padding-top: 15px; padding-left:15px; padding-right:15px; padding-bottom:15px;' action="guardarNegocios.php">
+				<h1 class="page-header text-center">Nuevo Negocio</h1>
 				<div class="row form-group">
 					<div class="col-sm-12">
 						<label class="control-label modal-label" for="descrip_negocio">Ingrese Descripcion Negocio:</label>

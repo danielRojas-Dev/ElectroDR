@@ -34,8 +34,9 @@ $(document).ready(function() {
 		const divTabla = $("#tablaResultBusqueda");
 
 		let tabla = `
-		<div>
-		<table id="myTable" class="table table-bordered table-striped display wrap" width="100%">
+		<div style='background-color:#C2C2C2;border-radius: 0.50rem;padding-top: 15px; padding-left:15px; padding-right:15px; padding-bottom:15px; '>
+		<h1 class="page-header text-center">Realizar Presupuesto</h1>
+		<table id="myTable" class="table table-bordered table-striped display wrap"  width="100%">
 		<thead>
 		<td>Imagen</td>
 		<td>Nombre Producto</td>
@@ -61,7 +62,7 @@ $(document).ready(function() {
 
 			tabla += `
 			<tr>
-			<td><img style='width:100px;' src="${ruta_img}"</td>	
+			<td><img style='width:100px; border-radius:0.50rem;' src="${ruta_img}"</td>	
 			<td><a class="btnProducto" data-IdProducto="${id_productos}"  href="#">${nombre}</a></td>	
 			<td>${desc_produc}</td>	
 			<td>${descrip_marca}</td>	
@@ -243,7 +244,7 @@ $(document).ready(function() {
 			}
 		}
 		
-		alert(`El precio total para la cantidad de ${cantProducto} productos de: ${productoNombre} es de: ${productoPrecio * cantProducto}$`);
+		alert(` ${cantProducto} unidades o metros de: ${productoNombre} es igual a ${productoPrecio * cantProducto}$`);
 
 	});
 

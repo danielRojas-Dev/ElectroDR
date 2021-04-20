@@ -1,9 +1,10 @@
 <?php require_once '../layouts/head.php'; ?>
 
 <div class="container">
-    <h1 class="page-header text-center">Buscador</h1>
+    
     <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="background-color: rgb(0,0,0,0.30); border-radius: 0.50rem;">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style='background-color:#C2C2C2;border-radius: 0.50rem;padding-top: 15px; padding-left:15px; padding-right:15px; padding-bottom:15px;'>
+            <h1 class="page-header text-center">Buscador</h1>
             <table id="myTable" class="table table-bordered table-striped display wrap" width="100%">
 
                 <thead>
@@ -28,7 +29,7 @@
                     while($row = $query->fetch_assoc()){
                         echo 
                         "<tr>
-                        <td><img style='width:100px;' src=".$row['ruta_img']."></td>
+                        <td><img style='width:100px; border-radius:0.50rem;' src=".$row['ruta_img']."></td>
                         <td>".$row['nombre']."</td>
                         <td>".$row['desc_produc']."</td>
                         <td>".$row['precio']."</td>
