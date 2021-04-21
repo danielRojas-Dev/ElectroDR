@@ -27,7 +27,7 @@ $resultNegocio = $conexion->query($sqlNegocio);
 			
 		</div>
 	</div>
-
+</div>
 
 
 

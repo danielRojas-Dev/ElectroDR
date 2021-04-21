@@ -1,18 +1,23 @@
 	/* Coded with love by Mutiullah Samim */
+
 		body,
 		html {
 			margin: 0;
+			padding-top: 5%;
 			padding: 0;
 			height: 100%;
 			background: rgb(13,7,7);
 			background: linear-gradient(180deg, rgba(13,7,7,1) 6%, rgba(8,137,255,1) 62%);
 		}
+
+
+
 		.user_card {
 			height: 400px;
 			width: 350px;
 			margin-top: auto;
 			margin-bottom: auto;
-			background: #F9DC58;
+			background: #F3F8B3;
 			position: relative;
 			display: flex;
 			justify-content: center;
@@ -34,7 +39,8 @@
 			width: 170px;
 			top: -75px;
 			border-radius: 50%;
-			background: #60a3bc;
+						background: rgb(13,7,7);
+			background: linear-gradient(180deg, rgba(13,7,7,1) 6%, rgba(8,137,255,1) 62%);
 			padding: 10px;
 			text-align: center;
 		}

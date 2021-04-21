@@ -181,7 +181,7 @@ $(document).ready(function() {
 		</tbody>
 		</table>
 		</div>
-		<input type="button" name="limpiarListaPresupuest" id="limpiarListaPresupuesto" class="btn btn-warning" value="Vacia Lista">
+		<input type="button" name="limpiarListaPresupuest" id="limpiarListaPresupuesto" class="btn btn-warning" value="Vaciar Lista">
 		<input type="button" name="pdfListaPresupuest" id="pdfListaPresupuesto" class="btn btn-info" value="imprimir Lista">
 		</div>
 		<div class="card-footer">
@@ -197,12 +197,23 @@ $(document).ready(function() {
 
 	}
 
+	
+		
+	
+
 	$(document).on("click", "#limpiarListaPresupuesto", function(e){
 
+		if (confirm("¿Desea Borrar todos los datos del Presupuesto?") == true) {
 		localStorage.clear();
 
 		aniadirProductoAlPresupuesto();
+
+
+	}
 	});
+
+	
+
 
 	$(document).on("click", ".borrarProducto", function(e){
 
@@ -228,6 +239,7 @@ $(document).ready(function() {
 		e.preventDefault();
 		let productoNombre = e.target.getAttribute("data-productosNombre");
 		let productoPrecio = e.target.getAttribute("data-productosPrecio");
+		let productoDescripcion = e.target.getAttribute("data-descripcionNombre");
 
 		let cantProducto = 0;
 		
@@ -244,10 +256,15 @@ $(document).ready(function() {
 			}
 		}
 		
-		alert(` ${cantProducto} unidades o metros de: ${productoNombre} es igual a ${productoPrecio * cantProducto}$`);
+		alert(` ${cantProducto} unidades o metros de: ${productoNombre} ${productoDescripcion} es igual a ${productoPrecio * cantProducto}$`);
 
 	});
 
 
+
+
 });	
 
+window.onbeforeunload = function() {
+  return "¿Desea recargar la página web?";
+};

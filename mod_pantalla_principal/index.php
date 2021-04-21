@@ -1,3 +1,13 @@
+<?php
+
+session_start();
+
+if (($_SESSION['usuario']) != ""){
+  
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +17,7 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta name="MobileOptimized" content="width">
   <meta name="HandheldFriendly" content="true">
-  <link rel="shortcut icon" type="../image/png" href="assets/img/icon_Shortcut.png">
+  <link rel="shortcut icon" type="../image/png" href="../assets/img/icon_Shortcut.png">
   <link rel="apple-touch-icon" href="../assets/img/icon_Shortcut.png">
   <link rel="apple-touch-startup-image"  href="../assets/img/icon_Shortcut.png">
   <link rel="manifest" href="../assets/json/manifest.json">
@@ -171,3 +181,9 @@
 
                 </body>
                 </html>
+
+                <?php
+              }else{
+              header('location:../index.php');
+            }
+                ?>

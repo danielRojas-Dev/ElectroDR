@@ -1,3 +1,13 @@
+<?php
+
+session_start();
+
+if (($_SESSION['usuario']) != ""){
+  
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -62,3 +72,9 @@
     </div>
 </nav>
 <br> <br> <br> <br>
+
+<?php
+}else{
+    header('location:../index.php');
+}
+?>

@@ -1,8 +1,4 @@
 
-<?php 
-
-
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -28,7 +24,7 @@
 	<!-- <link rel="stylesheet" href="../assets/css/scrolling-nav.css"> -->
 	<link rel="stylesheet" type="text/css" href="lib/font-awesome/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="lib/datatables/css/responsive.bootstrap4.min.css">
-	<body>
+	<body ">
 		<div class="container h-100">
 			<div class="d-flex justify-content-center h-100">
 				<div class="user_card">
@@ -47,7 +43,7 @@
 							</div>
 							<div class="input-group mb-2">
 								<div class="input-group-append">
-									<span class="input-group-text"><i class="fas fa-key"></i></span>
+									<span class="input-group-text"><i class="far fa-key"></i></span>
 								</div>
 								<input type="password" name="password" class="form-control input_pass" value="" placeholder="Contraseña">
 							</div>

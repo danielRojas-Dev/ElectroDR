@@ -37,7 +37,7 @@
                         <td>".$row['descrip_negocio']."</td>
                         <td>".$row['fecha_modificacion']."</td>
                         <td>
-							<a data-productosNombre='$row[nombre]' data-productosPrecio='$row[precio]' class='btnProductosCalcular btn btn-primary btn-xm'>Calcular</a>
+							<a data-productosNombre='$row[nombre]' data-descripcionNombre='$row[desc_produc]' data-productosPrecio='$row[precio]' class='btnProductosCalcular btn btn-primary btn-xm'>Calcular</a>
 							</td>";
                         
 
