@@ -177,7 +177,7 @@ $(document).ready(function() {
 
 
 
-	
+
 
 		tablaPresupuestoFinal += `
 		</tbody>
@@ -185,6 +185,7 @@ $(document).ready(function() {
 		</div>
 		<input type="button" name="limpiarListaPresupuest" id="limpiarListaPresupuesto" class="btn btn-warning" value="Vaciar Lista">
 		<input type="button" name="pdfListaPresupuest" id="pdfListaPresupuesto" class="btn btn-info" value="imprimir Lista">
+		<input type="button" name="pdfListaPresupuesto" id="pdfListaPresupuesto" class="btn btn-info" value="imprimir Lista">
 		</div>
 		<div class="card-footer">
 		<h5>Presupuesto Final es de $ ${precioTotal}</h5>
@@ -221,15 +222,36 @@ $(document).ready(function() {
 	
 
 
+	
+
+	$(document).on("click", "#limpiarListaPresupuesto", function(e){
+
+		if (confirm("¿Desea Borrar todos los datos del Presupuesto?") == true) {
+			localStorage.clear();
+
+			aniadirProductoAlPresupuesto();
+
+
+		}
+	});
+
+
+
 	$(document).on("click", ".borrarProducto", function(e){
 
 		
 		let idProductoLista = e.target.getAttribute("data-idListadoProductos");
 
 		if (confirm("¿Desea Borrar este producto del Presupuesto?") == true){
+
 		localStorage.removeItem(idProductoLista);
 		aniadirProductoAlPresupuesto();
-	}
+	
+
+			localStorage.removeItem(idProductoLista);
+			aniadirProductoAlPresupuesto();
+		
+}
 
 	});
 
@@ -242,16 +264,49 @@ $(document).ready(function() {
 
 	});
 
+
 	// $('.btnProductosCalcular').on('click', function(event) {
 	// 	event.preventDefault();
 	// 	alert('dasd')
 	// });
 
 
+	$(document).on("click", "#pdfListaPresupuesto", function(e){
+		let datosParaImprimir = [];
+		for (let i = 0; i < localStorage.length; i++) {
+			let clave = localStorage.key(i);
+			if (clave != "nombreNegocio"){
+				let resultProductos = localStorage.getItem(clave);
+
+				arrayResultProductos = resultProductos.split(',');
+
+				datosParaImprimir.push(arrayResultProductos);
+			}	
+		}
+		console.log(datosParaImprimir)
+		const data = {
+			datosParaImprimir: datosParaImprimir 
+		};
+		$.ajax({
+			type: "POST",
+			url: '../mod_presupuestos/imprimir.php',
+			data: data,
+			success: function(response){
+				console.log(response);
+			},
+			error: function() {
+				console.log("No se ha podido obtener la información");
+			}
+		});
+	});
 
 
 });	
 
 window.onbeforeunload = function() {
+
   return "¿Desea recargar la página web?";
+
+
+
 };

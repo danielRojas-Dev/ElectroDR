@@ -9,6 +9,8 @@ $id = $_GET['id_productos'];
 
 
 
+
+
 try {
 	$eliminar="DELETE FROM `productos` WHERE `id_productos` = '$id'";
 	$resultado=$conexion->query($eliminar);
