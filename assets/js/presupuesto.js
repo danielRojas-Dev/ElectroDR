@@ -185,7 +185,7 @@ $(document).ready(function() {
 		</div>
 		<input type="button" name="limpiarListaPresupuest" id="limpiarListaPresupuesto" class="btn btn-warning" value="Vaciar Lista">
 		<input type="button" name="pdfListaPresupuest" id="pdfListaPresupuesto" class="btn btn-info" value="imprimir Lista">
-		<input type="button" name="pdfListaPresupuesto" id="pdfListaPresupuesto" class="btn btn-info" value="imprimir Lista">
+		
 		</div>
 		<div class="card-footer">
 		<h5>Presupuesto Final es de $ ${precioTotal}</h5>
@@ -202,24 +202,6 @@ $(document).ready(function() {
 
 
 	}
-
-
-	
-		
-	
-
-	$(document).on("click", "#limpiarListaPresupuesto", function(e){
-
-		if (confirm("¿Desea Borrar todos los datos del Presupuesto?") == true) {
-		localStorage.clear();
-
-		aniadirProductoAlPresupuesto();
-
-
-	}
-	});
-
-	
 
 
 	

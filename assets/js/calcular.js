@@ -1,5 +1,10 @@
+	
+
 	$(document).on("click", ".btnProductosCalcular", function(e){
 		e.preventDefault();
+
+
+
 		let productoNombre = e.target.getAttribute("data-productosNombre");
 		let productoPrecio = e.target.getAttribute("data-productosPrecio");
 		let productoDescripcion = e.target.getAttribute("data-descripcionNombre");
@@ -19,6 +24,17 @@
 			}
 		}
 		
-		alert(` ${cantProducto} unidades o metros de: ${productoNombre} ${productoDescripcion} es igual a ${productoPrecio * cantProducto}$`);
+
 
 	});
+	
+
+			$('.form-control').keypress(function(e){
+
+		if(e.charCode == 44){
+			return false;
+		}
+	});
+
+	
+	
