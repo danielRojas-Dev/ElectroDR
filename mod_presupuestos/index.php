@@ -37,3 +37,4 @@ $resultNegocio = $conexion->query($sqlNegocio);
 
 
 <?php require_once '../layouts/footer.php' ; ?>
+<script src="../assets/js/presupuesto.js"></script>

@@ -18,7 +18,6 @@ $contrasena= $_POST['password'];
 //Consultar si los datos son están guardados en la base de datos
 $consulta= "SELECT * FROM usuario u1 WHERE u1.nombre_usuario = '$usuario' AND u1.contrasena = '$contrasena'"; 
 
-echo $consulta;
 
 $resultado=$conexion->query($consulta);
 

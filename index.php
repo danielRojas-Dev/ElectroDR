@@ -37,13 +37,13 @@
 						<form name="login" action="mod_login/script_acceso.php" method="POST">
 							<div class="input-group mb-3">
 								<div class="input-group-append">
-									<span class="input-group-text"><i class="fas fa-user"></i></span>
+									<span class="input-group-text"></span>
 								</div>
 								<input type="text" name="usuario" class="form-control input_user" value="" placeholder=" Usuario">
 							</div>
 							<div class="input-group mb-2">
 								<div class="input-group-append">
-									<span class="input-group-text"><i class="far fa-key"></i></span>
+									<span class="input-group-text"></span>
 								</div>
 								<input type="password" name="password" class="form-control input_pass" value="" placeholder="Contraseña">
 							</div>

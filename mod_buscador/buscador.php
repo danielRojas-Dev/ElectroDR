@@ -52,5 +52,6 @@
 </div>
 </div>
 
-
 <?php require_once '../layouts/footer.php'; ?>
+
+<script src="../assets/js/calcular.js"></script>
