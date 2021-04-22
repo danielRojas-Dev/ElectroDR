@@ -175,17 +175,12 @@ $(document).ready(function() {
 			}
 		}
 
-
-
-
-
 		tablaPresupuestoFinal += `
 		</tbody>
 		</table>
 		</div>
 		<input type="button" name="limpiarListaPresupuest" id="limpiarListaPresupuesto" class="btn btn-warning" value="Vaciar Lista">
 		<input type="button" name="pdfListaPresupuest" id="pdfListaPresupuesto" class="btn btn-info" value="imprimir Lista">
-		<input type="button" name="pdfListaPresupuesto" id="pdfListaPresupuesto" class="btn btn-info" value="imprimir Lista">
 		</div>
 		<div class="card-footer">
 		<h5>Presupuesto Final es de $ ${precioTotal}</h5>
@@ -197,32 +192,7 @@ $(document).ready(function() {
 		tarjetaPresupuestoFinal.html(tablaPresupuestoFinal);
 		$("#myTableProductos").DataTable({responsive: true});
 
-
-		
-
-
 	}
-
-
-	
-		
-	
-
-	$(document).on("click", "#limpiarListaPresupuesto", function(e){
-
-		if (confirm("¿Desea Borrar todos los datos del Presupuesto?") == true) {
-		localStorage.clear();
-
-		aniadirProductoAlPresupuesto();
-
-
-	}
-	});
-
-	
-
-
-	
 
 	$(document).on("click", "#limpiarListaPresupuesto", function(e){
 
@@ -231,10 +201,8 @@ $(document).ready(function() {
 
 			aniadirProductoAlPresupuesto();
 
-
 		}
 	});
-
 
 
 	$(document).on("click", ".borrarProducto", function(e){
@@ -244,14 +212,14 @@ $(document).ready(function() {
 
 		if (confirm("¿Desea Borrar este producto del Presupuesto?") == true){
 
-		localStorage.removeItem(idProductoLista);
-		aniadirProductoAlPresupuesto();
-	
+			localStorage.removeItem(idProductoLista);
+			aniadirProductoAlPresupuesto();
+
 
 			localStorage.removeItem(idProductoLista);
 			aniadirProductoAlPresupuesto();
-		
-}
+
+		}
 
 	});
 
@@ -272,6 +240,7 @@ $(document).ready(function() {
 
 
 	$(document).on("click", "#pdfListaPresupuesto", function(e){
+		const nombreNegocio = $('#negocioPresupuesto').children("option:selected").text();
 		let datosParaImprimir = [];
 		for (let i = 0; i < localStorage.length; i++) {
 			let clave = localStorage.key(i);
@@ -283,21 +252,14 @@ $(document).ready(function() {
 				datosParaImprimir.push(arrayResultProductos);
 			}	
 		}
-		console.log(datosParaImprimir)
+		// console.log(datosParaImprimir)
 		const data = {
 			datosParaImprimir: datosParaImprimir 
 		};
-		$.ajax({
-			type: "POST",
-			url: '../mod_presupuestos/imprimir.php',
-			data: data,
-			success: function(response){
-				console.log(response);
-			},
-			error: function() {
-				console.log("No se ha podido obtener la información");
-			}
-		});
+
+		const caracteristicas = "height=700,width=800,scrollTo,resizable=1,scrollbars=1,location=0";
+		window.open(`../mod_presupuestos/imprimir.php?datosParaImprimir=${JSON.stringify(datosParaImprimir)}&nombreNegocio=${nombreNegocio}`, 'Popup', caracteristicas);
+		return false;
 	});
 
 
@@ -305,8 +267,6 @@ $(document).ready(function() {
 
 window.onbeforeunload = function() {
 
-  return "¿Desea recargar la página web?";
-
-
+	return "¿Desea recargar la página web?";
 
 };
