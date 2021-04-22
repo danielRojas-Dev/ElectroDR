@@ -1,5 +1,7 @@
 <?php require_once '../layouts/head.php'; ?>
 
+
+
 <div class="container" >
 	<div class="row">
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style='background-color:#C2C2C2;border-radius: 0.50rem;padding-top: 15px; padding-left:15px; padding-right:15px; padding-bottom:15px;'>
@@ -45,7 +47,7 @@
 							<a href='editarProductos.php?id_productos=".$row['id_productos']."' class='btn btn-warning btn-xm'><span class='fa fa-edit'></span></a>
 							</td>
 							<td>
-							<a href='eliminarProductos.php?id_productos=".$row['id_productos']."' class='btn btn-danger btn-xm'><span class='fa fa-trash'></span></a>
+							<a href='eliminarProductos.php?id_productos=".$row['id_productos']."' id='eliminar' class='btn btn-danger btn-xm'><span class='fa fa-trash'></span></a>
 							</td>
 
 
@@ -63,6 +65,24 @@
 
 </div>
 
+
+
 <?php require_once '../layouts/footer.php'; 
 
 ?>
+<script  type="text/javascript">
+	
+$(document).on("click", "#eliminar", function(e){
+
+		e.preventDefault();
+
+if (confirm('¿Desea eliminar este producto?')== false){
+
+
+
+
+}
+
+});
+
+</script>

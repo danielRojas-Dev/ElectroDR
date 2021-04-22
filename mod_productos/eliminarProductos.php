@@ -2,7 +2,10 @@
 
 require_once '../conexion/conexion.php';
 
+
 $id = $_GET['id_productos'];
+
+
 
 
 
