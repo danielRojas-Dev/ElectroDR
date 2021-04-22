@@ -1,0 +1,23 @@
+{
+
+	"name":"Electro DR",
+	"short_name":"Electro DR",
+	"Descripcion":"Bienvenido Electro DR",
+	"background_color":"#A2A2A2",
+	"theme_color":"#ffff",
+	"orientation":"portrait",
+	"display":"standalone",
+	"start_url":"./?utm_source=web_app_manifest",
+	"start_url":"../../index.php",
+	"scope":"../../",
+	"lang":"es-MEX",
+	"icons":[
+
+		{
+			"src":"../img/icon_Shortcut.png",
+			"sizes":"512x512",
+			"type":"image/png"
+		}
+
+	]
+}
