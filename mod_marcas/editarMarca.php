@@ -20,7 +20,7 @@
 			$row_upd = $result->fetch_assoc();
 			?>
 
-			<form method="POST" style='background-color:#C2C2C2;border-radius: 0.50rem;padding-top: 15px; padding-left:15px; padding-right:15px; padding-bottom:15px;' action="modificarMarca.php">
+			<form method="POST" style='background-color:#D4E6F1;border-radius: 0.50rem;padding-top: 15px; padding-left:15px; padding-right:15px; padding-bottom:15px;' action="modificarMarca.php">
 
 				<h1 class="page-header text-center">Editar Marcas</h1><br><br>
 

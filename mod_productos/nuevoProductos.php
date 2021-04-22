@@ -19,7 +19,7 @@ $resultNegocio = $conexion->query($sqlNegocio);
 <div class="container">
 	<div class="row">
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-			<form method="POST" style='background-color:#C2C2C2;border-radius: 0.50rem;padding-top: 15px; padding-left:15px; padding-right:15px; padding-bottom:15px;'  action="guardarProductos.php" enctype="multipart/form-data">
+			<form method="POST" style='background-color:#D4E6F1;border-radius: 0.50rem;padding-top: 15px; padding-left:15px; padding-right:15px; padding-bottom:15px;'  action="guardarProductos.php" enctype="multipart/form-data">
 
 				<h1 class="page-header text-center">Nuevo Producto</h1>
 

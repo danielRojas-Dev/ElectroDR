@@ -34,7 +34,7 @@ $(document).ready(function() {
 		const divTabla = $("#tablaResultBusqueda");
 
 		let tabla = `
-		<div style='background-color:#C2C2C2;border-radius: 0.50rem;padding-top: 15px; padding-left:15px; padding-right:15px; padding-bottom:15px; '>
+		<div style='background-color:#D4E6F1;border-radius: 0.50rem;padding-top: 15px; padding-left:15px; padding-right:15px; padding-bottom:15px; '>
 		<h1 class="page-header text-center">Realizar Presupuesto</h1>
 		<table id="myTable" class="table table-bordered table-striped display wrap"  width="100%">
 		<thead>
@@ -127,7 +127,7 @@ $(document).ready(function() {
 
 		tablaPresupuestoFinal = `
 		<br>
-		<div class="tablaPdf card text-center">
+		<div class="tablaPdf card text-center" style='background:#D4E6F1';>
 		<div class="card-header">
 		<h1>Presupuesto de: ${(nombreNegocio) ? nombreNegocio : ""}</h1>
 		</div>
@@ -163,7 +163,7 @@ $(document).ready(function() {
 				precioTotal += parseInt(arrayResultProductos[4] * parseInt(arrayResultProductos[6]));
 
 				tablaPresupuestoFinal +=`<hr>
-				<tr class="bg-success">
+				<tr style='background-color:#5DADE2;'">
 				<td scope="row">${arrayResultProductos[0]}</td>
 				<td>${arrayResultProductos[1]}</td>
 				<td>${arrayResultProductos[2]}</td>
@@ -175,17 +175,13 @@ $(document).ready(function() {
 			}
 		}
 
-
-
-
-
 		tablaPresupuestoFinal += `
 		</tbody>
 		</table>
 		</div>
 		<input type="button" name="limpiarListaPresupuest" id="limpiarListaPresupuesto" class="btn btn-warning" value="Vaciar Lista">
 		<input type="button" name="pdfListaPresupuest" id="pdfListaPresupuesto" class="btn btn-info" value="imprimir Lista">
-		
+
 		</div>
 		<div class="card-footer">
 		<h5>Presupuesto Final es de $ ${precioTotal}</h5>
@@ -197,11 +193,8 @@ $(document).ready(function() {
 		tarjetaPresupuestoFinal.html(tablaPresupuestoFinal);
 		$("#myTableProductos").DataTable({responsive: true});
 
-
-		
-
-
 	}
+
 
 
 	
@@ -213,10 +206,8 @@ $(document).ready(function() {
 
 			aniadirProductoAlPresupuesto();
 
-
 		}
 	});
-
 
 
 	$(document).on("click", ".borrarProducto", function(e){
@@ -226,14 +217,14 @@ $(document).ready(function() {
 
 		if (confirm("¿Desea Borrar este producto del Presupuesto?") == true){
 
-		localStorage.removeItem(idProductoLista);
-		aniadirProductoAlPresupuesto();
-	
+			localStorage.removeItem(idProductoLista);
+			aniadirProductoAlPresupuesto();
+
 
 			localStorage.removeItem(idProductoLista);
 			aniadirProductoAlPresupuesto();
-		
-}
+
+		}
 
 	});
 
@@ -254,6 +245,7 @@ $(document).ready(function() {
 
 
 	$(document).on("click", "#pdfListaPresupuesto", function(e){
+		const nombreNegocio = $('#negocioPresupuesto').children("option:selected").text();
 		let datosParaImprimir = [];
 		for (let i = 0; i < localStorage.length; i++) {
 			let clave = localStorage.key(i);
@@ -265,21 +257,14 @@ $(document).ready(function() {
 				datosParaImprimir.push(arrayResultProductos);
 			}	
 		}
-		console.log(datosParaImprimir)
+		// console.log(datosParaImprimir)
 		const data = {
 			datosParaImprimir: datosParaImprimir 
 		};
-		$.ajax({
-			type: "POST",
-			url: '../mod_presupuestos/imprimir.php',
-			data: data,
-			success: function(response){
-				console.log(response);
-			},
-			error: function() {
-				console.log("No se ha podido obtener la información");
-			}
-		});
+
+		const caracteristicas = "height=700,width=800,scrollTo,resizable=1,scrollbars=1,location=0";
+		window.open(`../mod_presupuestos/imprimir.php?datosParaImprimir=${JSON.stringify(datosParaImprimir)}&nombreNegocio=${nombreNegocio}`, 'Popup', caracteristicas);
+		return false;
 	});
 
 
@@ -287,8 +272,6 @@ $(document).ready(function() {
 
 window.onbeforeunload = function() {
 
-  return "¿Desea recargar la página web?";
-
-
+	return "¿Desea recargar la página web?";
 
 };

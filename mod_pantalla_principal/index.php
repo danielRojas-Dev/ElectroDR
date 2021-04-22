@@ -60,7 +60,7 @@ if (($_SESSION['usuario']) != ""){
   <div class="container">
     <div class="row">
       <div class="col-lg-4 col-md-3">
-        <div class="card">
+        <div class="card" style="background: #D4E6F1">
           <div class="card-header">
             <h4 class="card-title">Buscador</h4>
           </div>
@@ -74,7 +74,7 @@ if (($_SESSION['usuario']) != ""){
       </div> 
 
       <div class="col-lg-4 col-md-3 ">
-        <div class="card">
+        <div class="card" style="background: #D4E6F1">
           <div class="card-header">
             <h4 class="card-title">Agregar Productos</h4>
           </div>
@@ -88,7 +88,7 @@ if (($_SESSION['usuario']) != ""){
       </div>  
 
       <div class="col-lg-4 col-md-3">
-        <div class="card">
+        <div class="card" style="background: #D4E6F1">
           <div class="card-header">
             <h4 class="card-title">Agregar Marcas</h4>
           </div>
@@ -102,7 +102,7 @@ if (($_SESSION['usuario']) != ""){
       </div> 
 
       <div class="col-lg-4 col-md-3">
-        <div class="card">
+        <div class="card" style="background: #D4E6F1">
           <div class="card-header">
             <h4 class="card-title">Agregar Negocios</h4>
           </div>
@@ -116,7 +116,7 @@ if (($_SESSION['usuario']) != ""){
       </div>  
 
       <div class="col-lg-4 col-md-3">
-        <div class="card">
+        <div class="card" style="background: #D4E6F1">
           <div class="card-header">
             <h4 class="card-title">Realizar Presupuestos</h4>
           </div>
@@ -130,8 +130,8 @@ if (($_SESSION['usuario']) != ""){
       </div> 
 
       <div class="col-lg-4 col-md-3">
-        <div class="card">
-          <div class="card-header">
+        <div class="card" style="background: #D4E6F1">
+          <div class="card-header" >
             <h4 class="card-title">Cerrar Sesion</h4>
           </div>
           <div class="card-body">
