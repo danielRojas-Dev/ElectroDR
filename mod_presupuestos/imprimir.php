@@ -21,7 +21,10 @@
   <link rel="stylesheet" type="text/css" href="../lib/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="../lib/datatables/css/responsive.bootstrap4.min.css">
 </head>
-<body >
+<body style="background-image: url('../assets/img/fondo1_pdf.jpg');  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 0;
+  height: 100vh;">
 
 
 
@@ -38,9 +41,9 @@
 	?>
 
 
-	<div class="container">
+	<div class="container" style="background: rgb(171, 178, 185, 0.60);">
 		<div class="row">
-			<table width="100%">
+			<table width="100%"  >
 				<tr>
 					<td width="20%">
 						<img src="../assets/img/icon_Shortcut.png" width="75" height="75">
@@ -63,7 +66,7 @@
 						</tr>
 					</table>
 					<hr>
-					<table   class="table table-bordered ">
+					<table class="table table-bordered ">
 						<tr>
 							<td class="text-center">
 								<h5>  </h5> 
@@ -72,9 +75,9 @@
 						</tr>
 					</table>    
 					<hr>
-					<table  class="table table-stripped table-bordered nowrap ">
+					<table  class="table table-bordered table-striped display wrap" width="100%">
 						<thead>
-							<tr style="background-color:#5D6D7E ;">
+							<tr>
 								<th class="text-center">Nombre Producto</th>
 								<th class="text-center">Descripcion Producto</th>
 								<th class="text-center">Marca</th>
@@ -83,13 +86,13 @@
 								<th class="text-center">Precio Total</th>
 							</tr>
 						</thead>
-						<tbody>
+						<tbody >
 							<?php 
 							$totalPresupuesto = 0;
 							for ($i=0; $i <count($datosParaImprimir); $i++) { 
 								$totalPresupuesto += $datosParaImprimir[$i][4] * $datosParaImprimir[$i][6];
 								?>
-								<tr style="background-color:#85C1E9;">     
+								<tr >     
 									<td class="text-center"><?php echo $datosParaImprimir[$i][0]; ?></td>
 									<td class="text-center"><?php echo $datosParaImprimir[$i][1]; ?></td>
 									<td class="text-center"><?php echo $datosParaImprimir[$i][2]; ?></td>
