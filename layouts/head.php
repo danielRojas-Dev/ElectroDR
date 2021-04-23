@@ -17,9 +17,9 @@ if (($_SESSION['usuario']) != ""){
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta name="MobileOptimized" content="width">
     <meta name="HandheldFriendly" content="true">
-    <link rel="shortcut icon" type="image/png" href="../assets/img/icon_Shortcut.png">
-    <link rel="apple-touch-icon" href="../assets/img/icon_Shortcut.png">
-    <link rel="apple-touch-startup-image"  href="../assets/img/icon_Shortcut.png">
+    <link rel="shortcut icon" type="image/png" href="../assets/img/enchufe_shortcut.png">
+    <link rel="apple-touch-icon" href="../assets/img/enchufe_shortcut.png">
+    <link rel="apple-touch-startup-image"  href="../assets/img/enchufe_shortcut.png">
 
 
     <link rel="manifest" href="../assets/json/manifest.json">
@@ -35,9 +35,13 @@ if (($_SESSION['usuario']) != ""){
 
 </head>
 <body>
+
+    <style>
+@import url('http://fonts.cdnfonts.com/css/sf-sports-night');
+</style>
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
 		<div class="container">
-            <a class="navbar-brand js-scroll-trigger" href="../mod_pantalla_principal/index.php">Electro DR</a>
+            <a style="font-family: 'SF Sports Night', sans-serif; font-size: 25px;" class="navbar-brand js-scroll-trigger" href="../mod_pantalla_principal/index.php">Electro DR</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>

@@ -14,7 +14,7 @@
 
 		.user_card {
 			height: 400px;
-			width: 350px;
+			width: 400px;
 			margin-top: auto;
 			margin-bottom: auto;
 			background: #F3F8B3;
@@ -39,7 +39,7 @@
 			width: 170px;
 			top: -75px;
 			border-radius: 50%;
-						background: rgb(13,7,7);
+			background: rgb(13,7,7);
 			background: linear-gradient(180deg, rgba(13,7,7,1) 6%, rgba(8,137,255,1) 62%);
 			padding: 10px;
 			text-align: center;
@@ -47,8 +47,8 @@
 		.brand_logo {
 			height: 150px;
 			width: 150px;
-			border-radius: 50%;
-			border: 2px solid white;
+			
+			
 		}
 		.form_container {
 			margin-top: 100px;

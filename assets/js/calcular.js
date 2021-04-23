@@ -26,15 +26,6 @@
 		
 
 
-	});
-	
-
-			$('.form-control').keypress(function(e){
-
-		if(e.charCode == 44){
-			return false;
-		}
-	});
 
 	
 	

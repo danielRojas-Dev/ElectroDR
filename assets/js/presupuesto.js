@@ -129,10 +129,10 @@ $(document).ready(function() {
 		<br>
 		<div class="tablaPdf card text-center" style='background:#D4E6F1';>
 		<div class="card-header">
-		<h1>Presupuesto de: ${(nombreNegocio) ? nombreNegocio : ""}</h1>
+		<h1>Presupuesto</h1>
 		</div>
 		<div class="card-body">
-		<h5 class="card-title">Listado Productos: </h5>
+		<h5 class="card-title">Listado de Productos </h5>
 		<div class="table-responsive">
 		<table id="myTableProductos"  class="table table-bordered table-dark table-striped display wrap" width="100%">
 		<thead>
