@@ -21,7 +21,7 @@
   <link rel="stylesheet" type="text/css" href="../lib/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="../lib/datatables/css/responsive.bootstrap4.min.css">
 </head>
-<body style="background-image: url('../assets/img/fondo1_pdf.jpg');  background-size: cover;
+<body style="background-image: url('../assets/img/fondo1_pdf_sinColor.jpg');  background-size: cover;
   background-repeat: no-repeat;
   margin: 0;
   height: 100vh;">
@@ -43,18 +43,23 @@
 	?>
 
 
-	<div class="container" style="background: rgb(171, 178, 185, 0.60);">
+	<div class="container" style="background: rgb(247, 220, 111, 0.60); ;">
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 		<div class="row">
 			<table width="100%"  >
 				<tr>
 					<td style="padding-top: 5px;" width="20%">
-						<img src="../assets/img/fondo_pdf_logo4.png" width="250" height="250">
+						<img src="../assets/img/fondo_pdf_logo_sincolor4.png" width="250" height="250">
 					</td>
 					<td class="text-center">
 						<H1 style="font-family: 'SF Sports Night', sans-serif;font-size: 65px;"> Electro DR</H1>
 						<h6  style="font-family: 'SF Sports Night NS', sans-serif; font-size: 30px;"> Instalaciones Electricas y Aires Acondicionados</h6>
+						<h6  style="font-family: 'SF Sports Night NS', sans-serif; font-size: 15px;"> Presupuestos al 3704-590488</h6>
+
+
 					</td><br><br><br><br><br></td><br><br><br><br><br>
+
+
 					<td width="20%">
 						<h6><b>Fecha :</b>
 							<?php
@@ -71,7 +76,8 @@
 					
 
 					
-					<table  class="table table-bordered table-striped display wrap" width="100%">
+					<table  class="table table-bordered table-striped display wrap  table-response" width="100%">
+						   <h6  style="font-family: 'SF Sports Night NS', sans-serif; font-size: 15px; text-align: right;">Comprobante NO valido como Factura</h6>
 						<thead>
 							<tr>
 								<th class="text-center">Nombre Producto</th>
@@ -113,6 +119,7 @@
 				</div>
 			</div>
 			</div>
+
 
 			<style type="text/css" media="print">
 				@media print {
