@@ -3,7 +3,8 @@
 	"name":"Electro DR",
 	"short_name":"Electro DR",
 	"Descripcion":"Bienvenido Electro DR",
-	"background_color":"#A2A2A2",
+	"background_color":"rgb(247, 220, 111, 0.60)",
+	"font-family":"SF Sports Night",
 	"theme_color":"#ffff",
 	"orientation":"portrait",
 	"display":"standalone",
@@ -14,7 +15,7 @@
 	"icons":[
 
 		{
-			"src":"../img/icon_Shortcut.png",
+			"src":"../img/fondo_pdf_logo_sincolor4.png",
 			"sizes":"512x512",
 			"type":"image/png"
 		}

@@ -9,7 +9,7 @@
 		let productoPrecio = e.target.getAttribute("data-productosPrecio");
 		let productoDescripcion = e.target.getAttribute("data-descripcionNombre");
 
-		let cantProducto = 0;
+		let cantProducto ;
 		
 		while(true){
 			cantProducto = parseInt(prompt("Ingrese la cantidad de productos: "));
@@ -24,8 +24,9 @@
 			}
 		}
 		
+		alert(cantProducto + ' unidades o metros de ' + productoNombre + productoDescripcion + ' es igual a $' + cantProducto*productoPrecio);
 
 
-
+});
 	
 	
