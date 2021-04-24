@@ -135,6 +135,20 @@ if (($_SESSION['usuario']) != ""){
 
       <div class="col-lg-4 col-md-3">
         <div class="card" style="background: #D4E6F1">
+          <div class="card-header">
+            <h4 class="card-title">Historial Presupuesto</h4>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <!-- Aca va el formulario -->
+              <a href="../mod_historial_clientes/index.php"><img style="display: block; margin-left: auto; margin-right: auto;" src="../assets/img/historialClientes.png" alt="200" width="200" height="200"></a>
+            </div>
+          </div>
+        </div>          
+      </div> 
+
+      <div class="col-lg-4 col-md-3">
+        <div class="card" style="background: #D4E6F1">
           <div class="card-header" >
             <h4 class="card-title">Cerrar Sesion</h4>
           </div>

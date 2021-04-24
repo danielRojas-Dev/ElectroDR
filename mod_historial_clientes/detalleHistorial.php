@@ -1,3 +1,22 @@
+<?php 
+
+$fechaPresupuesto = $_GET['fechaPresupuesto'];
+
+$array = file('../mod_presupuestos/datosPdf/datos.txt', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+
+$resultadosEncontrados = array_filter($array, function($var) use ($fechaPresupuesto) { 
+             return preg_match("/^.*$fechaPresupuesto.*\$/m", $var); 
+           });
+
+$row = "";
+if (count($resultadosEncontrados) > 0) {
+  foreach ($resultadosEncontrados as $linea) {
+    $row = json_decode($linea);
+  }
+}
+
+ ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,38 +34,15 @@
 	<link href = " http://fonts.cdnfonts.com/css/sf-sports-night " rel = "hoja de estilo" >
 
 	<link rel="stylesheet" type="text/css" href="../lib/bootstrap/css/bootstrap.min.css">
+	<style>
+		@import url('http://fonts.cdnfonts.com/css/sf-sports-night');
+	</style>
 
 </head>
 <body style="background-image: url('../assets/img/fondo1_pdf_sinColor.jpg');  background-size: cover;
 background-repeat: no-repeat;
 margin: 0;
 height: 100vh;">
-
-<style>
-	@import url('http://fonts.cdnfonts.com/css/sf-sports-night');
-</style>
-
-
-<?php
-date_default_timezone_set('America/Argentina/Buenos_Aires');
-
-$nombreNegocio = $_GET['nombreNegocio'];
-$datosParaImprimir = json_decode($_GET['datosParaImprimir']);
-$nombreCliente = $_GET['nombreCliente'];
-
-$fecha = date("d/m/y");
-$hora = date("h:i:s");
-$jump = "\r\n";
-$historialDatosPdf = [
-	$nombreCliente,
-	$nombreNegocio,
-	$datosParaImprimir,
-	$fecha,
-	$hora
-];
-
-
-?>
 
 
 <div class="container" style="background: rgb(247, 220, 111, 0.60); ;">
@@ -67,14 +63,16 @@ $historialDatosPdf = [
 
 
 					<td width="20%">
-						<h6><b>Fecha :</b>
+						<h6>
+							
 							<?php
-							echo $fecha;
-							?></h6> 
+							echo "<b>Fecha:</b> ".$row[3];
+							?>
+						</h6> 
 
 							<h6>
 								<?php
-								echo "<b>Hora  :</b>".$hora;
+								echo "<b>Hora:</b> ".$row[4];
 								?></h6> 
 							</td>
 						</tr>
@@ -97,6 +95,7 @@ $historialDatosPdf = [
 						<tbody >
 							<?php 
 							$totalPresupuesto = 0;
+							$datosParaImprimir = $row[2];
 							for ($i=0; $i <count($datosParaImprimir); $i++) { 
 								$totalPresupuesto += $datosParaImprimir[$i][4] * $datosParaImprimir[$i][6];
 								?>
@@ -118,8 +117,7 @@ $historialDatosPdf = [
 					<br>           
 					<hr>
 					<div id="botones">
-						<button type="button" class="btn btn-danger" onClick = "javascript:window.close();" > Volver</button>
-
+						<a href="index.php" class="btn btn-danger">Volver</a>
 						<input type="submit" onclick="javascript:window.print();" class="btn btn-success" value="Imprimir">
 					</div>
 				</div>
@@ -137,23 +135,3 @@ $historialDatosPdf = [
 
 	</body>
 	</html>
-
-	<?php 
-
-	// $file = fopen("datosPdf/datos.txt", "r");
-
-	// while(!feof($file)) {
-
-	// 	var_dump(json_decode(fgets($file))). "<br />";
-
-	// }
-
-	// fclose($file);
-
-		$file = "datosPdf/datos.txt";
-		$fp = fopen($file, "a");
-		fputs($fp, json_encode($historialDatosPdf));
-		fputs($fp, "\r\n");
-		fclose($fp);
-
-	?>
