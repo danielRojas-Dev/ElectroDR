@@ -245,6 +245,18 @@ $(document).ready(function() {
 
 
 	$(document).on("click", "#pdfListaPresupuesto", function(e){
+
+		while(true){
+			nombreCliente = prompt("Ingrese el nombre del cliente: ");
+
+			if(nombreCliente){
+				break;
+			}else{	
+				alert('Ingrese un nombre valido');
+				return;
+			}
+		}
+
 		const nombreNegocio = $('#negocioPresupuesto').children("option:selected").text();
 		let datosParaImprimir = [];
 		for (let i = 0; i < localStorage.length; i++) {
@@ -263,7 +275,7 @@ $(document).ready(function() {
 		};
 
 		const caracteristicas = "height=700,width=800,scrollTo,resizable=1,scrollbars=1,location=0";
-		window.open(`../mod_presupuestos/imprimir.php?datosParaImprimir=${JSON.stringify(datosParaImprimir)}&nombreNegocio=${nombreNegocio}`, 'Popup', caracteristicas);
+		window.open(`../mod_presupuestos/imprimir.php?datosParaImprimir=${JSON.stringify(datosParaImprimir)}&nombreNegocio=${nombreNegocio}&nombreCliente=${nombreCliente}`, 'Popup', caracteristicas);
 		return false;
 	});
 
