@@ -47,7 +47,7 @@
 							</td>
 							<td>
 
-							<a href='eliminarProductos.php?id_productos=".$row['id_productos']."' id='eliminar' class='btn btn-danger btn-xm'><span class='fa fa-trash'></span></a>
+							<a href='eliminarProductos.php?id_productos=".$row['id_productos']."' id='eliminar' class='btn btn-danger btn-xm' onclick='return confirmation()'><span class='fa fa-trash'></span></a>
 
 							
 
@@ -76,18 +76,13 @@
 ?>
 <script  type="text/javascript">
 	
-$(document).on("click", "#eliminar", function(e){
-
-		e.preventDefault();
-
-if (confirm('¿Desea eliminar este producto?')== false){
-
-
-
-
-}
-
-});
+	function confirmation() {
+		if(confirm("Desea seguir?")){
+			return true;
+		}else{
+			return false;
+		}
+	}
 
 </script>
 
