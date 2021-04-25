@@ -82,7 +82,7 @@ $historialDatosPdf = [
 
 
 
-					<table  class="table table-bordered table-striped display wrap  table-response" width="100%">
+					<table  class="table table-bordered table-responsive table-striped display wrap  table-response" width="100%">
 						<h6  style="font-family: 'SF Sports Night NS', sans-serif; font-size: 15px; text-align: right;">Comprobante NO valido como Factura</h6>
 						<thead>
 							<tr>
