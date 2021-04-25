@@ -1,9 +1,5 @@
-	
-
-	$(document).on("click", ".btnProductosCalcular", function(e){
+$(document).on("click", ".btnProductosCalcular", function(e){
 		e.preventDefault();
-
-
 
 		let productoNombre = e.target.getAttribute("data-productosNombre");
 		let productoPrecio = e.target.getAttribute("data-productosPrecio");
@@ -12,7 +8,7 @@
 		let cantProducto ;
 		
 		while(true){
-			cantProducto = parseInt(prompt("Ingrese la cantidad de productos: "));
+			cantProducto = prompt("Ingrese la cantidad de productos: ");
 
 			if(!isNaN(cantProducto) && cantProducto != null && cantProducto != "" && cantProducto > 0 && Number.isInteger(parseInt(cantProducto))){
 				break;
@@ -25,7 +21,6 @@
 		}
 		
 		alert(cantProducto + ' unidades o metros de ' + productoNombre + productoDescripcion + ' es igual a $' + cantProducto*productoPrecio);
-
 
 });
 	
