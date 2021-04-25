@@ -24,7 +24,7 @@
 	<!-- <link rel="stylesheet" href="../assets/css/scrolling-nav.css"> -->
 	<link rel="stylesheet" type="text/css" href="lib/font-awesome/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="lib/datatables/css/responsive.bootstrap4.min.css">
-	<body ">
+	<body >
 		<div class="container h-100">
 			<div class="d-flex justify-content-center h-100">
 				<div class="user_card">
