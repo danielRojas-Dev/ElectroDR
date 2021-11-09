@@ -7,6 +7,12 @@
 <script src="../assets/js/data_table.js"></script>
 
 <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script> -->
+<script>
+$(document).ready(function() {
+document.querySelector('img[src="https://cdn.000webhost.com/000webhost/logo/footer-powered-by-000webhost-white2.png"]').style.display = 'none'
+   
+});
+</script>
 
 
 </body>

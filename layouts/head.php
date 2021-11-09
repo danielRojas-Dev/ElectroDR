@@ -37,7 +37,8 @@ if (($_SESSION['usuario']) != ""){
     <body>
 
         <style>
-            @import url('http://fonts.cdnfonts.com/css/sf-sports-night');
+            @import url('https://fonts.cdnfonts.com/css/sf-sports-night');
+            
         </style>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
           <div class="container">

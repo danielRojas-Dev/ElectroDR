@@ -9,9 +9,9 @@
 	<meta content="width=device-width, initial-scale=1.0" name="viewport">
 	<meta name="MobileOptimized" content="width">
 	<meta name="HandheldFriendly" content="true">
-	<link rel="shortcut icon" type="image/png" href="assets/img/enchufe_Shortcut.png">
-	<link rel="apple-touch-icon" href="assets/img/enchufe_Shortcut.png">
-	<link rel="apple-touch-startup-image"  href="assets/img/enchufe_Shortcut.png">
+	<link rel="shortcut icon" type="image/png" href="assets/img/enchufe_shortcut.png">
+	<link rel="apple-touch-icon" href="assets/img/enchufe_shortcut.png">
+	<link rel="apple-touch-startup-image"  href="assets/img/enchufe_shortcut.png">
 	<link rel="stylesheet" type="text/css" href="assets/css/login.css">
 
 
@@ -30,7 +30,7 @@
 				<div class="user_card">
 					<div class="d-flex justify-content-center">
 						<div class="brand_logo_container">
-							<img src="assets/img/enchufe_Shortcut.png" class="brand_logo" alt="Logo">
+							<img src="assets/img/enchufe_shortcut.png" class="brand_logo" alt="Logo">
 						</div>
 					</div>
 					<div class="d-flex justify-content-center form_container">
@@ -79,6 +79,12 @@
 
 		<!-- <script src="assets/js/scrolling-nav.js"></script> -->
 
+<script>
+$(document).ready(function() {
+document.querySelector('img[src="https://cdn.000webhost.com/000webhost/logo/footer-powered-by-000webhost-white2.png"]').style.display = 'none'
+   
+});
+</script>
 
 
 	</body>

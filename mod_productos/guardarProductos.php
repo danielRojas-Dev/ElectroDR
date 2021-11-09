@@ -36,10 +36,9 @@ try {
 			$rutaImg = $directorio.$nombre_img; 
 			$sql_negocios = "INSERT INTO `productos`(`nombre`, `desc_produc`, `ruta_img`, `precio`, `fecha_modificacion`, `id_negocio`, `id_marca`) VALUES ('$nombre_producto', '$desc_produc', '$rutaImg', '$precio_produc', NOW(), '$negocio', '$marca')";
 
-			// $result_negocios = $conexion->query($sql_negocios);
-			echo $sql_negocios;
-			die();
-			// mensaje_alerta("Error al subir al archivo");
+			$result_negocios = $conexion->query($sql_negocios);
+		
+			 
 
 		}else{
 			// si hubo algun error al subir el archivo

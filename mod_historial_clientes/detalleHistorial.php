@@ -27,15 +27,17 @@ if (count($resultadosEncontrados) > 0) {
 	<meta content="width=device-width, initial-scale=1.0" name="viewport">
 	<meta name="MobileOptimized" content="width">
 	<meta name="HandheldFriendly" content="true">
-	<link rel="shortcut icon" type="../image/png" href="../assets/img/icon_Shortcut.png">
-	<link rel="apple-touch-icon" href="../assets/img/icon_Shortcut.png">
-	<link rel="apple-touch-startup-image"  href="../assets/img/icon_Shortcut.png">
+	<link rel="shortcut icon" type="../image/png" href="../assets/img/enchufe_shortcut.png">
+	<link rel="apple-touch-icon" href="../assets/img/enchufe_shortcut.png">
+	<link rel="apple-touch-startup-image"  href="../assets/img/enchufe_shortcut.png">
 	<link rel="manifest" href="../assets/json/manifest.json">
 	<link href = " http://fonts.cdnfonts.com/css/sf-sports-night " rel = "hoja de estilo" >
-
-	<link rel="stylesheet" type="text/css" href="../lib/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" media="all" href="../lib/bootstrap/css/bootstrap.min.css">
 	<style>
 		@import url('http://fonts.cdnfonts.com/css/sf-sports-night');
+		
+		
+		
 	</style>
 
 </head>
@@ -45,10 +47,10 @@ margin: 0;
 height: 100vh;">
 
 
-<div class="container" style="background: rgb(247, 220, 111, 0.60); ;">
+<div class="container" style="background: rgb(247, 220, 111, 0.60);">
 	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 		<div class="row">
-			<table width="100%"  >
+			<table class="table"  width="100%"  >
 				<tr>
 					<td style="padding-top: 5px;" width="20%">
 						<img src="../assets/img/fondo_pdf_logo_sincolor4.png" width="250" height="250">
@@ -80,7 +82,7 @@ height: 100vh;">
 
 
 
-					<table  class="table table-bordered table-striped display wrap  table-response" width="100%">
+					<table  class="table table-bordered table-striped display wrap  "  width="100%">
 						<h6  style="font-family: 'SF Sports Night NS', sans-serif; font-size: 15px; text-align: right;">Comprobante NO valido como Factura</h6>
 						<thead>
 							<tr>
@@ -132,6 +134,12 @@ height: 100vh;">
 		</style>
 		<script src="../lib/jquery/jquery.min.js"></script>
 		<script src="../lib/bootstrap/js/bootstrap.min.js"></script>
+		<script>
+$(document).ready(function() {
+document.querySelector('img[src="https://cdn.000webhost.com/000webhost/logo/footer-powered-by-000webhost-white2.png"]').style.display = 'none'
+   
+});
+</script>
 
 	</body>
 	</html>

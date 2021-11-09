@@ -77,7 +77,7 @@
 <script  type="text/javascript">
 	
 	function confirmation() {
-		if(confirm("Desea seguir?")){
+		if(confirm("Desea eliminar este producto?")){
 			return true;
 		}else{
 			return false;

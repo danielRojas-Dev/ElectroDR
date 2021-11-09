@@ -1,39 +1,35 @@
-$(document).ready(function() {
+$(document).ready(function () {
+  localStorage.clear();
 
-	localStorage.clear();
+  $("#negocioPresupuesto").on("change", function (e) {
+    const valor = $(this).children("option:selected").text();
 
-	$('#negocioPresupuesto').on('change',function(e){
-		const valor = $(this).children("option:selected").text();
+    realizarPeticion(valor);
+  });
 
-		realizarPeticion(valor);
-	});
+  const realizarPeticion = (descripcionNegocio) => {
+    const data = {
+      terminoBusqueda: descripcionNegocio,
+    };
 
+    $.ajax({
+      type: "POST",
+      url: "../mod_presupuestos/buscadorProductos.php",
+      data: data,
+      success: function (response) {
+        armarTabla(JSON.parse(response));
+      },
+      error: function () {
+        console.log("No se ha podido obtener la información");
+      },
+    });
+  };
 
-	const realizarPeticion = (descripcionNegocio)=>{
+  const armarTabla = (datosTabla) => {
+    // console.log(datosTabla)
+    const divTabla = $("#tablaResultBusqueda");
 
-		const data = {
-			terminoBusqueda: descripcionNegocio 
-		};
-
-		$.ajax({
-			type: "POST",
-			url: '../mod_presupuestos/buscadorProductos.php',
-			data: data,
-			success: function(response){
-				armarTabla(JSON.parse(response));
-			},
-			error: function() {
-				console.log("No se ha podido obtener la información");
-			}
-		});
-	}
-
-	const armarTabla = (datosTabla)=>{
-
-		// console.log(datosTabla)
-		const divTabla = $("#tablaResultBusqueda");
-
-		let tabla = `
+    let tabla = `
 		<div style='background-color:#D4E6F1;border-radius: 0.50rem;padding-top: 15px; padding-left:15px; padding-right:15px; padding-bottom:15px; '>
 		<h1 class="page-header text-center">Realizar Presupuesto</h1>
 		<table id="myTable" class="table table-bordered table-striped display wrap"  width="100%">
@@ -48,19 +44,19 @@ $(document).ready(function() {
 		</thead>
 		<tbody>`;
 
-		for (let i = 0; i < datosTabla.length; i++) {
-			const { 
-				desc_produc, 
-				descrip_negocio, 
-				fecha_modificacion,
-				descrip_marca,
-				nombre,
-				precio,
-				ruta_img,
-				id_productos
-			} = datosTabla[i];
+    for (let i = 0; i < datosTabla.length; i++) {
+      const {
+        desc_produc,
+        descrip_negocio,
+        fecha_modificacion,
+        descrip_marca,
+        nombre,
+        precio,
+        ruta_img,
+        id_productos,
+      } = datosTabla[i];
 
-			tabla += `
+      tabla += `
 			<tr>
 			<td><img style='width:100px; border-radius:0.50rem;' src="${ruta_img}"</td>	
 			<td><a class="btnProducto" data-IdProducto="${id_productos}"  href="#">${nombre}</a></td>	
@@ -71,61 +67,69 @@ $(document).ready(function() {
 			<td>${fecha_modificacion}</td>	
 			</tr>
 			`;
-		}
-		
-		tabla += `
+    }
+
+    tabla += `
 		
 		</div>`;
-		divTabla.html(`${tabla}`);
-		// dataTable.;
-		$("#myTable").DataTable({responsive: true});
-	}
+    divTabla.html(`${tabla}`);
+    // dataTable.;
+    $("#myTable").DataTable({ responsive: true });
+  };
 
-	$(document).on("click", ".btnProducto", function(e){
-		let nombreProducto = e.target.text;
-		let idProducto = e.target.getAttribute("data-IdProducto");
-		let datosProductos = [];
-		// console.log(idProducto)
+  $(document).on("click", ".btnProducto", function (e) {
+    let nombreProducto = e.target.text;
+    let idProducto = e.target.getAttribute("data-IdProducto");
+    let datosProductos = [];
+    // console.log(idProducto)
 
-		$(this).parents("tr").find("td").each(function() {
-			datosProductos.push($(this).html()); 
-		});
+    $(this)
+      .parents("tr")
+      .find("td")
+      .each(function () {
+        datosProductos.push($(this).html());
+      });
 
-		datosProductos.splice(0, 2);
-		datosProductos.unshift(nombreProducto);
-		let cantProducto;
-		while(true){
-			cantProducto = prompt("Ingrese la cantidad de productos: ");
+    datosProductos.splice(0, 2);
+    datosProductos.unshift(nombreProducto);
+    let cantProducto;
+    while (true) {
+      cantProducto = prompt("Ingrese la cantidad de productos: ");
 
-			if(!isNaN(cantProducto) && cantProducto != null && cantProducto != "" && cantProducto > 0 && Number.isInteger(parseInt(cantProducto))){
-				break;
-			}else if(!cantProducto){
-				return;
-			}else{	
-				alert('Ingrese un numero valido para las cantidades del producto!');
-				continue;
-			}
-		}
-		datosProductos.push(cantProducto);
+      if (
+        !isNaN(cantProducto) &&
+        cantProducto != null &&
+        cantProducto != "" &&
+        cantProducto > 0 &&
+        Number.isInteger(parseInt(cantProducto))
+      ) {
+        break;
+      } else if (!cantProducto) {
+        return;
+      } else {
+        alert("Ingrese un numero valido para las cantidades del producto!");
+        continue;
+      }
+    }
+    datosProductos.push(cantProducto);
 
-		localStorage.setItem("nombreNegocio", $('#negocioPresupuesto option:selected').text())
-		localStorage.setItem(idProducto, datosProductos)
+    localStorage.setItem(
+      "nombreNegocio",
+      $("#negocioPresupuesto option:selected").text()
+    );
+    localStorage.setItem(idProducto, datosProductos);
 
-		aniadirProductoAlPresupuesto();
-		$("html, body").animate({scrollTop: $(this).offset().top},600);
-	});
+    aniadirProductoAlPresupuesto();
+    $("html, body").animate({ scrollTop: $(this).offset().top }, 600);
+  });
 
+  const aniadirProductoAlPresupuesto = () => {
+    const tarjetaPresupuestoFinal = $("#tarjetaResultPresupuesto");
+    let precioTotal = 0;
+    let tablaPresupuestoFinal = "";
+    let nombreNegocio = localStorage.getItem("nombreNegocio");
 
-	const aniadirProductoAlPresupuesto = ()=>{
-		const tarjetaPresupuestoFinal = $('#tarjetaResultPresupuesto');
-		let precioTotal = 0;
-		let tablaPresupuestoFinal = "";
-		let nombreNegocio = localStorage.getItem("nombreNegocio");
-
-		
-
-
-		tablaPresupuestoFinal = `
+    tablaPresupuestoFinal = `
 		<br>
 		<div class="tablaPdf card text-center" style='background:#D4E6F1';>
 		<div class="card-header">
@@ -150,140 +154,140 @@ $(document).ready(function() {
 
 		`;
 
+    for (let i = 0; i < localStorage.length; i++) {
+      let clave = localStorage.key(i);
+      if (clave != "nombreNegocio") {
+        let resultProductos = localStorage.getItem(clave);
 
-		for(let i = 0; i < localStorage.length; i++) {
+        arrayResultProductos = resultProductos.split(",");
 
-			let clave = localStorage.key(i);
-			if (clave != "nombreNegocio"){
+        precioTotal += parseInt(
+          arrayResultProductos[4] * parseInt(arrayResultProductos[6])
+        );
 
-				let resultProductos = localStorage.getItem(clave);
-
-				arrayResultProductos = resultProductos.split(',');
-
-				precioTotal += parseInt(arrayResultProductos[4] * parseInt(arrayResultProductos[6]));
-
-				tablaPresupuestoFinal +=`<hr>
+        tablaPresupuestoFinal += `<hr>
 				<tr style='background-color:#5DADE2;'">
 				<td scope="row">${arrayResultProductos[0]}</td>
 				<td>${arrayResultProductos[1]}</td>
 				<td>${arrayResultProductos[2]}</td>
 				<td>${arrayResultProductos[6]}</td>
 				<td>$ ${parseInt(arrayResultProductos[4])}</td>
-				<td>$ ${parseInt(arrayResultProductos[4]) * parseInt(arrayResultProductos[6])}</td>
+				<td>$ ${
+          parseInt(arrayResultProductos[4]) * parseInt(arrayResultProductos[6])
+        }</td>
 				<td><input type="button" value="Borrar" data-idListadoProductos="${clave}" class="borrarProducto btn btn-danger"></td></td>
 				</tr>`;
-			}
-		}
+      }
+    }
 
-		tablaPresupuestoFinal += `
+    tablaPresupuestoFinal += `
 		</tbody>
 		</table>
 		</div>
 		<input type="button" name="limpiarListaPresupuest" id="limpiarListaPresupuesto" class="btn btn-warning" value="Vaciar Lista">
-		<input type="button" name="pdfListaPresupuest" id="pdfListaPresupuesto" class="btn btn-info" value="imprimir Lista">
+		<input type="button" name="pdfListaPresupuest" data-toggle="modal" data-target="#imprimirLista" id="pdfListaPresupuesto" class="btn btn-info" value="imprimir Lista">
 
 		</div>
 		<div class="card-footer">
 		<h5>Presupuesto Final es de $ ${precioTotal}</h5>
 		</div>
 		</div>`;
-		
 
+    tarjetaPresupuestoFinal.html(tablaPresupuestoFinal);
+    $("#myTableProductos").DataTable({ responsive: true });
+  };
 
-		tarjetaPresupuestoFinal.html(tablaPresupuestoFinal);
-		$("#myTableProductos").DataTable({responsive: true});
+  $(document).on("click", "#limpiarListaPresupuesto", function (e) {
+    if (confirm("¿Desea Borrar todos los datos del Presupuesto?") == true) {
+      localStorage.clear();
 
-	}
+      aniadirProductoAlPresupuesto();
+    }
+  });
 
+  $(document).on("click", ".borrarProducto", function (e) {
+    let idProductoLista = e.target.getAttribute("data-idListadoProductos");
 
+    if (confirm("¿Desea Borrar este producto del Presupuesto?") == true) {
+      localStorage.removeItem(idProductoLista);
+      aniadirProductoAlPresupuesto();
 
-	
+      localStorage.removeItem(idProductoLista);
+      aniadirProductoAlPresupuesto();
+    }
+  });
 
-	$(document).on("click", "#limpiarListaPresupuesto", function(e){
+  $(".form-control").keypress(function (e) {
+    if (e.charCode == 44) {
+      return false;
+    }
+  });
 
-		if (confirm("¿Desea Borrar todos los datos del Presupuesto?") == true) {
-			localStorage.clear();
+  // $('.btnProductosCalcular').on('click', function(event) {
+  // 	event.preventDefault();
+  // 	alert('dasd')
 
-			aniadirProductoAlPresupuesto();
+  // });
 
-		}
-	});
+  $(document).on("click", "#imprimir", function (e) {
+    const nomCliente = document.getElementById("nomCliente").value;
+    const tipoComprobante = document.getElementById("tipoComprobante").value;
+    const alertNombre = document.getElementById("alertNombre");
+    const alertComprobante = document.getElementById("alertComprobantes");
+    const formModal = document.getElementById("formModal");
+    const botonImprimir = document.getElementById("imprimir");
 
+    pattern = "[a-zA-Z ]{2,254}";
 
-	$(document).on("click", ".borrarProducto", function(e){
+    if (!nomCliente.match(pattern)) {
+      alertNombre.style.display = "block";
+      alertNombre.innerHTML = "El nombre no es correcto";
+      alertNombre.className = "text text-danger";
+    } else if (tipoComprobante == 0) {
+      alertComprobante.style.display = "block";
+      alertComprobante.innerHTML = "Debe seleccionar una opcion";
+      alertComprobante.className = "text text-danger";
+    } else {
+      alertComprobante.style.display = "none";
+      alertNombre.style.display = "none";
 
-		
-		let idProductoLista = e.target.getAttribute("data-idListadoProductos");
+      // console.log(tipoComprobante);
 
-		if (confirm("¿Desea Borrar este producto del Presupuesto?") == true){
+      const nombreNegocio = $("#negocioPresupuesto")
+        .children("option:selected")
+        .text();
+      let datosParaImprimir = [];
+      for (let i = 0; i < localStorage.length; i++) {
+        let clave = localStorage.key(i);
+        if (clave != "nombreNegocio") {
+          let resultProductos = localStorage.getItem(clave);
 
-			localStorage.removeItem(idProductoLista);
-			aniadirProductoAlPresupuesto();
+          arrayResultProductos = resultProductos.split(",");
 
+          datosParaImprimir.push(arrayResultProductos);
+        }
+      }
+      // console.log(datosParaImprimir)
+      const data = {
+        datosParaImprimir: datosParaImprimir,
+      };
 
-			localStorage.removeItem(idProductoLista);
-			aniadirProductoAlPresupuesto();
+      const caracteristicas =
+        "height=700,width=800,scrollTo,resizable=1,scrollbars=1,location=0";
+      window.open(
+        `../mod_presupuestos/imprimir.php?datosParaImprimir=${JSON.stringify(
+          datosParaImprimir
+        )}&tipoComprobante=${parseInt(
+          tipoComprobante
+        )}&nombreNegocio=${nombreNegocio}&nombreCliente=${nomCliente}`,
+        "Popup",
+        caracteristicas
+      );
+      return false;
+    }
+  });
+});
 
-		}
-
-	});
-
-
-	$('.form-control').keypress(function(e){
-
-		if(e.charCode == 44){
-			return false;
-		}
-
-	});
-
-
-	// $('.btnProductosCalcular').on('click', function(event) {
-	// 	event.preventDefault();
-	// 	alert('dasd')
-	// });
-
-
-	$(document).on("click", "#pdfListaPresupuesto", function(e){
-
-		while(true){
-			nombreCliente = prompt("Ingrese el nombre del cliente: ");
-
-			if(nombreCliente){
-				break;
-			}else{	
-				alert('Ingrese un nombre valido');
-				return;
-			}
-		}
-
-		const nombreNegocio = $('#negocioPresupuesto').children("option:selected").text();
-		let datosParaImprimir = [];
-		for (let i = 0; i < localStorage.length; i++) {
-			let clave = localStorage.key(i);
-			if (clave != "nombreNegocio"){
-				let resultProductos = localStorage.getItem(clave);
-
-				arrayResultProductos = resultProductos.split(',');
-
-				datosParaImprimir.push(arrayResultProductos);
-			}	
-		}
-		// console.log(datosParaImprimir)
-		const data = {
-			datosParaImprimir: datosParaImprimir 
-		};
-
-		const caracteristicas = "height=700,width=800,scrollTo,resizable=1,scrollbars=1,location=0";
-		window.open(`../mod_presupuestos/imprimir.php?datosParaImprimir=${JSON.stringify(datosParaImprimir)}&nombreNegocio=${nombreNegocio}&nombreCliente=${nombreCliente}`, 'Popup', caracteristicas);
-		return false;
-	});
-
-
-});	
-
-window.onbeforeunload = function() {
-
-	return "¿Desea recargar la página web?";
-
+window.onbeforeunload = function () {
+  return "¿Desea recargar la página web?";
 };

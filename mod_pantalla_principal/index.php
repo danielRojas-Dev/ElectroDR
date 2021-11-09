@@ -17,9 +17,9 @@ if (($_SESSION['usuario']) != ""){
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta name="MobileOptimized" content="width">
     <meta name="HandheldFriendly" content="true">
-    <link rel="shortcut icon" type="image/png" href="../assets/img/enchufe_Shortcut.png">
-    <link rel="apple-touch-icon" href="../assets/img/enchufe_Shortcut.png">
-    <link rel="apple-touch-startup-image"  href="../assets/img/enchufe_Shortcut.png">
+    <link rel="shortcut icon" type="image/png" href="../assets/img/enchufe_shortcut.png">
+    <link rel="apple-touch-icon" href="../assets/img/enchufe_shortcut.png">
+    <link rel="apple-touch-startup-image"  href="../assets/img/enchufe_shortcut.png">
     <link rel="manifest" href="../assets/json/manifest.json">
 
 
@@ -41,7 +41,8 @@ if (($_SESSION['usuario']) != ""){
       body{
         margin-bottom: 30px;
       }
-
+      
+ 
 
     </style>
   }
@@ -51,7 +52,7 @@ if (($_SESSION['usuario']) != ""){
 <body>
 
   <style>
-    @import url('http://fonts.cdnfonts.com/css/sf-sports-night');
+    @import url('https://fonts.cdnfonts.com/css/sf-sports-night');
   </style>
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
@@ -185,15 +186,21 @@ if (($_SESSION['usuario']) != ""){
 
 
 
-                  <script src="lib/jquery/jquery.min.js"></script>
-                  <script src="lib/bootstrap/js/bootstrap.min.js"></script>
-                  <script src="lib/datatables/js/jquery.dataTables.min.js"></script>
-                  <script src="lib/datatables/js/dataTables.bootstrap4.min.js"></script>
-                  <script src="lib/datatables/js/dataTables.responsive.min.js"></script>
-                  <script src="lib/datatables/js/responsive.bootstrap4.min.js"></script>
-                  <script src="assets/js/data_table.js"></script>
-                  <script src="assets/js/pwa.js"></script>
+                  <script src="../lib/jquery/jquery.min.js"></script>
+                  <script src="../lib/bootstrap/js/bootstrap.min.js"></script>
+                  <script src="../lib/datatables/js/jquery.dataTables.min.js"></script>
+                  <script src="../lib/datatables/js/dataTables.bootstrap4.min.js"></script>
+                  <script src="../lib/datatables/js/dataTables.responsive.min.js"></script>
+                  <script src="../lib/datatables/js/responsive.bootstrap4.min.js"></script>
+                  <script src="../assets/js/data_table.js"></script>
+                  <script src="../assets/js/pwa.js"></script>
                   <!-- <script src="assets/js/scrolling-nav.js"></script> -->
+<script>
+$(document).ready(function() {
+document.querySelector('img[src="https://cdn.000webhost.com/000webhost/logo/footer-powered-by-000webhost-white2.png"]').style.display = 'none'
+   
+});
+</script>
 
 
 

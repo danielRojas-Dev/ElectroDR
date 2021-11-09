@@ -55,4 +55,10 @@ $file = fopen("../mod_presupuestos/datosPdf/datos.txt", "r");
 </div>
 
 <?php require_once '../layouts/footer.php'; ?>
+<script>
+$(document).ready(function() {
+document.querySelector('img[src="https://cdn.000webhost.com/000webhost/logo/footer-powered-by-000webhost-white2.png"]').style.display = 'none'
+   
+});
+</script>
 
