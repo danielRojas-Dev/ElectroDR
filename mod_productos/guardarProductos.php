@@ -6,7 +6,7 @@ require_once '../conexion/conexion.php';
 $nombre_producto = $_POST['nombre_producto'];
 $desc_produc = $_POST['desc_produc'];
 $img_produc = $_FILES['img_produc'];
-$precio_produc = $_POST['precio_produc'];
+$precio_produc = floatval($_POST['precio_produc']);
 $marca = $_POST['marca'];
 $negocio = $_POST['negocio'];
 

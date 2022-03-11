@@ -101,16 +101,17 @@ $(document).ready(function () {
         cantProducto != null &&
         cantProducto != "" &&
         cantProducto > 0 &&
-        Number.isInteger(parseInt(cantProducto))
+        (!cantProducto / 1 == 0 || Number.isInteger(parseFloat(cantProducto)))
       ) {
         break;
       } else if (!cantProducto) {
         return;
       } else {
-        alert("Ingrese un numero valido para las cantidades del producto!");
+        alert("Ingrese un numero valido para las cantidades de|l producto!");
         continue;
       }
     }
+
     datosProductos.push(cantProducto);
 
     localStorage.setItem(
@@ -161,8 +162,8 @@ $(document).ready(function () {
 
         arrayResultProductos = resultProductos.split(",");
 
-        precioTotal += parseInt(
-          arrayResultProductos[4] * parseInt(arrayResultProductos[6])
+        precioTotal += parseFloat(
+          arrayResultProductos[4] * parseFloat(arrayResultProductos[6])
         );
 
         tablaPresupuestoFinal += `<hr>
@@ -171,9 +172,10 @@ $(document).ready(function () {
 				<td>${arrayResultProductos[1]}</td>
 				<td>${arrayResultProductos[2]}</td>
 				<td>${arrayResultProductos[6]}</td>
-				<td>$ ${parseInt(arrayResultProductos[4])}</td>
+				<td>$ ${parseFloat(arrayResultProductos[4])}</td>
 				<td>$ ${
-          parseInt(arrayResultProductos[4]) * parseInt(arrayResultProductos[6])
+          parseFloat(arrayResultProductos[4]) *
+          parseFloat(arrayResultProductos[6])
         }</td>
 				<td><input type="button" value="Borrar" data-idListadoProductos="${clave}" class="borrarProducto btn btn-danger"></td></td>
 				</tr>`;
@@ -277,7 +279,7 @@ $(document).ready(function () {
       window.open(
         `../mod_presupuestos/imprimir.php?datosParaImprimir=${JSON.stringify(
           datosParaImprimir
-        )}&tipoComprobante=${parseInt(
+        )}&tipoComprobante=${parseFloat(
           tipoComprobante
         )}&nombreNegocio=${nombreNegocio}&nombreCliente=${nomCliente}`,
         "Popup",

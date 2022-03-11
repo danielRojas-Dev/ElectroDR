@@ -1,9 +1,9 @@
 <?php 
 
 	$servidor = "localhost";
-	$usuario = "id16446890_electrodr_14";
-	$password = "DanielRojas_10";
-	$base_de_datos = "id16446890_electrodr_nueva";
+	$usuario = "root";
+	$password = "";
+	$base_de_datos = "electrodr";
 
 	$conexion = new mysqli($servidor, $usuario, $password, $base_de_datos);
 
